@@ -1,0 +1,105 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "text": "Lima kartu 16,8,4,2,1 hati. Kode 1 jika kartu terbuka, 0 jika tertutup. Contoh nilai 9 = 01001. Temukan kode untuk nilai 19.",
+      "options": {
+        "A": "10011",
+        "B": "10001",
+        "C": "11111",
+        "D": "01011",
+        "E": "00011"
+      },
+      "answer": "A",
+      "cards": [
+        16,
+        8,
+        4,
+        2,
+        1
+      ],
+      "example": {
+        "value": 9,
+        "code": "01001"
+      }
+    },
+    {
+      "id": 2,
+      "text": "Kode berang-berang (L/R dari pintu masuk). Contoh A=LL, BAR=LRLLLR. Berapa banyak huruf pada kode untuk kata BEAR?",
+      "options": {
+        "A": "8",
+        "B": "7",
+        "C": "9",
+        "D": "6",
+        "E": "10"
+      },
+      "answer": "C",
+      "mapping": {
+        "B": "LRL",
+        "E": "LRR",
+        "A": "LL",
+        "R": "R"
+      },
+      "encoded": "LRLLRRLLR"
+    },
+    {
+      "id": 3,
+      "text": "Strategi pencarian impostor: tiap rapat, bagi dua kelompok seimbang; kelompok tanpa impostor bebas, sisanya lanjut. Paling banyak berapa kali rapat untuk menemukan 1 impostor (contoh 12 pemain)?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "5",
+        "D": "1",
+        "E": "4"
+      },
+      "answer": "E",
+      "worst_case_sequence": [
+        12,
+        6,
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Mesin hitung dengan tombol +2, -2, ×2, ÷2. Dari 0, minimal berapa penekanan tombol untuk mencapai 2020?",
+      "options": {
+        "A": "14",
+        "B": "13",
+        "C": "15",
+        "D": "24",
+        "E": "16"
+      },
+      "answer": "A",
+      "one_sequence": [
+        "+2",
+        "×2",
+        "×2",
+        "×2",
+        "×2",
+        "×2",
+        "×2",
+        "-2",
+        "×2",
+        "×2",
+        "×2",
+        "×2",
+        "+2",
+        "+2"
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Lomba marathon melalui pos A,B,C,D,E masing-masing sekali, start A finish E. Rute mana yang berjarak terpendek?",
+      "options": {
+        "A": "ABCDE",
+        "B": "ACDBE",
+        "C": "ABDCE",
+        "D": "ADCBE",
+        "E": "ACBDE"
+      },
+      "answer": "E"
+    }
+  ]
+}

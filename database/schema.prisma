@@ -1,0 +1,79 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./computesite.db"
+}
+
+model User {
+  id             String    @id
+  name           String
+  email          String    @unique
+  educationLevel String
+  birthday       DateTime?
+  password       String
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime?
+
+  progress    Progress[]
+  quizAttempt QuizAttempt[]
+  testAttempt TestAttempt[]
+}
+
+model Bab {
+  id       Int    @id @default(autoincrement())
+  title    String
+  synopsis String
+  number   Int    @unique // 1,2,3... sequence in module
+
+  progress    Progress[]
+  QuizAttempt QuizAttempt[]
+}
+
+model QuizAttempt {
+  id          Int      @id @default(autoincrement())
+  userId      String
+  quizId      Int
+  babId       Int
+  isCorrect   Boolean
+  answer      String?
+  attemptedAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+  bab  Bab  @relation(fields: [babId], references: [id])
+
+  @@unique([userId, babId, quizId])
+}
+
+model TestAttempt {
+  id          Int      @id @default(autoincrement())
+  userId      String
+  testId      Int
+  isCorrect   Boolean
+  answer      String?
+  attemptedAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+/**
+ * Progress of each user per course/sub-bab
+ */
+enum ProgressStatus {
+  NOT_OPENED
+  OPENED
+  DONE_READING
+  QUIZ_ATTEMPT
+}
+
+model Progress {
+  id     Int            @id @default(autoincrement())
+  userId String
+  babId  Int
+  status ProgressStatus @default(NOT_OPENED)
+  user   User           @relation(fields: [userId], references: [id])
+  bab    Bab?           @relation(fields: [babId], references: [id])
+}

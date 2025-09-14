@@ -1,0 +1,96 @@
+.resultRoot {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.contentWrapper {
+	position: relative;
+	max-width: 60em;
+	margin: 0 auto;
+	margin-bottom: 4em;
+	display: flex;
+	flex-direction: column;
+	gap: 1.25em
+}
+
+.innerWrapper, .innerWrapperMini {
+	background: #fff;
+	padding: 2.25em;
+	border-radius: 1em;
+	display: flex;
+	flex-direction: column;
+	gap: 1.25em
+}
+
+.innerWrapperMini {
+	padding: 1.25em;
+}
+
+.topper {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
+	margin-bottom: 2em;
+}
+
+.topperBack {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 1em;
+	padding: .75em 1.25em;
+	width: fit-content;
+	border-radius: .6em;
+	cursor: pointer;
+
+	&:hover {
+		background: #dfdfdf;
+	}
+}
+
+.topperFlex, .topperFlexLogos {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 1.25em 0;
+	margin-bottom: 1em;
+}
+
+.topperFlexLogos {
+	position: relative;
+	margin: .5em 0;
+
+	& p {
+		width: 80%;
+		font-size: 1.15em;
+	}
+}
+
+.resultAnswer {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: .5em
+}
+
+.resultAnswerRight {
+	position: relative;
+	width: 100%;
+	padding: .7em;
+	color: var(--color-green-800);
+	background: var(--color-green-200);
+	border-radius: 6px;
+}
+
+.resultAnswerWrong {
+	position: relative;
+	width: 100%;
+	padding: .7em;
+	color: var(--color-red-800);
+	background: var(--color-red-200);
+	border-radius: 6px;
+}

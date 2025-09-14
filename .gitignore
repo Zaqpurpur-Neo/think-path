@@ -9,9 +9,16 @@
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
+yarn.lock
 
 # testing
 /coverage
+
+# generator
+/generated
+*.pdf
+/database/migrations
+/database/computesite.db
 
 # next.js
 /.next/

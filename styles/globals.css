@@ -1,19 +1,76 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #efefef;
+  --foreground: #171717;
+
+  --normal-dark: #090909;
+  --light-gray: #c8c8c8;
+
+  --rich-black: #111E26;
+  --midnight-green: #052C2D;
+  --mindaro: #C6E493;
+  --jade: #5CA376;
+  --shamrock-green: #579C6F;
+  --hover-midnight: #135153;
+
+  --min-width-login: 24em;
+  --color-red-50: oklch(.971 .013 17.38);
+  --color-red-100: oklch(.936 .032 17.717);
+  --color-red-200: oklch(.885 .062 18.334);
+  --color-red-500: oklch(.637 .237 25.331);
+  --color-red-600: oklch(.577 .245 27.325);
+  --color-red-800: oklch(.444 .177 26.899);
+  --color-yellow-50: oklch(.987 .026 102.212);
+  --color-yellow-100: oklch(.973 .071 103.193);
+  --color-yellow-200: oklch(.945 .129 101.54);
+  --color-yellow-500: oklch(.795 .184 86.047);
+  --color-yellow-600: oklch(.681 .162 75.834);
+  --color-yellow-800: oklch(.476 .114 61.907);
+  --color-green-50: oklch(.982 .018 155.826);
+  --color-green-100: oklch(.962 .044 156.743);
+  --color-green-200: oklch(.925 .084 155.995);
+  --color-green-300: oklch(.871 .15 154.449);
+  --color-green-500: oklch(.723 .219 149.579);
+  --color-green-600: oklch(.627 .194 149.214);
+  --color-green-800: oklch(.448 .119 151.328);
+  --color-blue-50: oklch(.97 .014 254.604);
+  --color-blue-600: oklch(.546 .245 262.881);
+  --color-blue-800: oklch(.424 .199 265.638);
+  --color-gray-50: oklch(.985 .002 247.839);
+  --color-gray-100: oklch(.967 .003 264.542);
+  --color-gray-200: oklch(.928 .006 264.531);
+  --color-gray-300: oklch(.872 .01 258.338);
+  --color-gray-400: oklch(.707 .022 261.325);
+  --color-gray-500: oklch(.551 .027 264.364);
+  --color-gray-600: oklch(.446 .03 256.802);
+  --color-gray-800: oklch(.278 .033 256.848);
+  --color-gray-900: oklch(.21 .034 264.665);
 }
 
 html,
 body {
+  color-scheme: light;
   max-width: 100vw;
   overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+.markdown-body {
+	background: #fff;   /* force white background */ 
+	color: #222;        /* dark text */
+
+	& .md-tab-left {
+		margin-left: 2em;
+	}
+
+	& h2 {
+		border-bottom: none;
+		padding-bottom: none;
+	}
 }
 
 body {
@@ -22,21 +79,18 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Outfit', sans-serif;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }

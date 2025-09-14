@@ -1,0 +1,62 @@
+{
+  "Modul 4": {
+    "title": "ABSTRAK",
+    "problems": [
+      {
+        "id": "MAA – Timbangan Rusak",
+        "question": "Dona menimbang Nero + Champagne = 18 kg, Champagne + Magnum = 26 kg, dan Nero + Magnum = 20 kg. Timbangan rusak saat ingin menimbang ketiganya. Tentukan berat total ketiga kucing bersama-sama.",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "answer": "C"
+      },
+      {
+        "id": "AAS – Bisnis Bakso",
+        "question": "Agria, Bogoria, dan Pertania membuat: 3 bakso biasa, 3 bakso spesial, 2 bakso nuklir. Agria: biasa = 1 menit, spesial = 2 menit, nuklir = 5 menit. Bogoria: biasa = 2 menit, spesial = 2 menit, nuklir = 3 menit. Pertania: nuklir = 2 menit. Berapa waktu minimal agar semua selesai?",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "answer": "B"
+      },
+      {
+        "id": "MUS – Perwakilan Regu",
+        "question": "Ada 6 regu dengan anggota: 5, 7, 6, 7, 8, 10 orang. Berapa minimal siswa yang harus diundang agar setiap regu pasti diwakili 1 orang?",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "answer": "D"
+      },
+      {
+        "id": "KPR – Perjalanan Arabot",
+        "question": "Arabot berjalan dari A/B/C menuju stasiun pengisian. Ada 6 label jalur (L/R) yang hilang. Tentukan urutan label agar Arabot selalu sampai stasiun.",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "answer": "A"
+      },
+      {
+        "id": "SWJ – Klub Berbagi Buku",
+        "question": "Ada 7 siswa dengan relasi pertemanan. Buku dipinjam dari Ben ke teman termuda yang belum baca. Siapa pembaca terakhir?",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "answer": "D"
+      }
+    ]
+  }
+}

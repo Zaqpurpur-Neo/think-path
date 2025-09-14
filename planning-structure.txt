@@ -1,0 +1,115 @@
+# Pages Routes Schema
+
+[Define::Routes]
+/ => Landing Pages
+/courses => { 
+	/ => (
+		Course list pages: 
+			- contains list current module/topics, and summary of the content, synopsis
+			- Need login to access more
+	)
+
+	/[name-course] => (
+		contain synopsis of the module/topics:
+		- add login/register to show mote or learn
+	)
+}
+
+/test => big test of module
+/login => Login Pages
+/register => Register Pages
+
+[Rule::AfterLogin]
+@attr(label: Go Home)
+/(dashboard | home) => {
+	/ => (
+		# references eldiru unsoed or udemy
+		Dashboard content:
+			- all modules/topics
+			- progress of the topics
+			- latest open courses
+	)
+}
+
+[Define::API]
+/api => {
+	/auth => (
+		@attr(type: js)
+		/login.js => Logic of login 
+		/register.js => Logic of Register
+	)
+
+	/quizz => (
+		@attr(type: js)
+		/submit.js => logic submit 
+		/progress.js => logic progress
+	)
+
+	/ai => (
+		/explainer.js => explain when course is done, contains logic and handle the api, need get context of module and 
+	)
+}
+
+# Database schema 
+[Action::DBModel]
+
+User {
+    id            Int @id @default(autoincrement())
+    name          String
+    email         String @unique
+    passwordHash  String
+    createdAt     DateTime @default(now())
+    updatedAt     DateTime @updatedAt
+    Progress      Progress[]
+}
+
+Course {
+    id          Int @id @default(autoincrement())
+    name        String          // short name/slug
+    title       String
+    synopsis    String
+    description String
+    createdAt   DateTime @default(now())
+    updatedAt   DateTime @updatedAt
+    SubBab      SubBab[]
+    Test        Test[]
+}
+
+Bab {
+    id        Int @id @default(autoincrement())
+    title     String
+    order     Int             // 1,2,3... sequence in module
+    content   String          // lesson material
+    courseId  Int
+    Course    Course @relation(fields: [courseId], references: [id])
+    Quiz      Quiz[]
+}
+
+Quiz {
+    id        Int @id @default(autoincrement())
+    question  String
+    options   Json            // [{a: "...", b: "..."}]
+    answer    String          // correct option key
+    subBabId  Int
+    SubBab    SubBab @relation(fields: [subBabId], references: [id])
+}
+
+Test {
+    id        Int @id @default(autoincrement())
+    courseId  Int
+    Course    Course @relation(fields: [courseId], references: [id])
+    questions Json            // combined quiz pool
+}
+
+/* Progress of each user per course/sub-bab */
+Progress {
+    id        Int @id @default(autoincrement())
+    userId    Int
+    courseId  Int
+    subBabId  Int?
+    status    String          // "locked" | "unlocked" | "completed"
+    User      User   @relation(fields: [userId], references: [id])
+    Course    Course @relation(fields: [courseId], references: [id])
+    SubBab    SubBab? @relation(fields: [subBabId], references: [id])
+}
+

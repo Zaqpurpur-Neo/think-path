@@ -1,0 +1,110 @@
+.datePicker {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: .25em;
+	color: #090909;
+	user-select: none;
+}
+
+.datePopup {
+	position: absolute;
+	bottom: 50%;
+	left: 0;
+	font-size: 1.0rem;
+	border-radius: 8px;
+	box-shadow: 0 0 0 1px var(--light-gray) inset;
+	transition: all .25s ease;
+	z-index: 3;
+	background: #fff;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+.days, .dates {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(7, 2em);
+	gap: .8em;
+	margin-block: .8em;
+
+	& button {
+		cursor: pointer;
+		aspect-ratio: 1;
+		background: none;
+		border: none;
+		font-size: .8em;
+		border-radius: 4px;
+	}
+
+	& button:hover {
+		background: #d8d8d8;
+	}
+
+	& span {
+		font-size: .8em;
+		font-weight: 600;
+		text-transform: uppercase;
+		text-align: center;
+	}
+}
+
+.box {
+	position: relative;
+	font-size: 1.0125rem;
+	padding: .5em .75em;
+	border-radius: 8px;
+	box-shadow: 0 0 0 1px var(--light-gray) inset;
+	min-width: var(--min-width-login);
+	transition: all .25s ease;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	& svg {
+		font-size: 1em;
+	}
+}
+
+.topper {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	& button {
+		aspect-ratio: 1;
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: .6em;
+		border-radius: 4px;
+	}
+
+	& button:hover {
+		background: #dfdfdf;
+	}
+}
+
+.topperCenter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: .5em;
+
+	& select {
+		padding: .6em;
+		border-radius: 4px;
+		padding-right: .7em;
+		border: 1px solid var(--light-gray)
+	}
+}
+
+.date-not-now {
+	cursor: unset;
+
+	&:hover {
+		background: none;
+	}
+}

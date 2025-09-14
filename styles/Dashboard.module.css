@@ -1,0 +1,51 @@
+.homeSection {
+	position: relative;
+	width: 100%;
+}
+
+.fadeOut {
+	animation: fade-out .95s ease;
+	animation-fill-mode: both;
+}
+
+.homeInner {
+	max-width: 77.5em;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 1.25em;
+	margin-top: 2.5em;
+
+	animation: fade-in 1s ease;
+	animation-fill-mode: both;
+}
+
+.moduleSection {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.05em;
+
+	animation: fade-in 1s ease;
+	animation-fill-mode: both;
+	animation-delay: .25s;
+}
+
+@keyframes fade-out {
+	from {
+		opacity: 1;
+		transform: translateY(0);
+	} to {
+		opacity: 0;
+		transform: translateY(4em);
+	}
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+		transform: translateY(4em);
+	} to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

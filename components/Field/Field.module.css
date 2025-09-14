@@ -1,0 +1,38 @@
+.input-root {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: .25em;
+	color: #090909;
+
+	& input {
+		position: relative;
+		font-size: 1.0125rem;
+		padding: .5em .75em;
+		border-radius: 8px;
+		box-shadow: 0 0 0 1px var(--light-gray) inset;
+		min-width: var(--min-width-login);
+		transition: all .25s ease;
+		box-sizing: border-box;
+		outline: none;
+		border: none
+	}
+
+	& input:focus {
+		box-shadow: 0 0 0 2px var(--jade) inset;
+		transition: all .25s ease;
+		outline: none;
+	}
+}
+
+.invalid {
+	box-shadow: 0 0 0 2px red inset;
+
+	&:focus {
+		box-shadow: 0 0 0 2px red inset;
+	}
+}
+
+.error-text {
+	color: red
+}

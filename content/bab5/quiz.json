@@ -1,0 +1,99 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "text": "Sebuah lebah robot memiliki 4 tombol panah di punggungnya. Lebah robot itu bergerak seperti pada gambar berikut.\n\nSederetan penekanan tombol yang diberikan akan diingat sebagai program yang akan dijalankan robot. Tedapat juga tombol GO untuk memulai gerakan yang akan dilakukan sesuai dengan program. Contoh: mula-mula lebah bergerak maju, kemudian berputar kekiri, lalu bergerak maju. Penekanan GO berikutnya akan menyebabkan gerakan yang sama. Empat anak bermain dengan robot-robot lebahnya. Masing-masing membuat programnya sendiri-sendiri untuk lebah robot miliknya. Mereka menekan tombol GO dan kemudian lebah robot bergerak. Mereka menekan tombol GO kembali sekali lagi namun hanya satu saja yang kembali ke posisi semula.\n\nPertanyaan: Manakah deretan penekanan tombol yang mengembalikan robot lebah ke posisi dan arah semula?",
+      "options": {
+        "A": "Program A",
+        "B": "Program B",
+        "C": "Program C",
+        "D": "Program D",
+        "E": "Program E"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 2,
+      "text": "Kepulauan Honomakato terdiri dari lima pulau yang indah yaitu Ho, No, Ma, Ka, dan To. Pulau terbesar yaitu Ho terhubung ke daratan (pulau utama) oleh sebuah jembatan besar terbuat dari besi yang kokoh. Selain itu, terdapat jembatan-jembatan kayu yang menghubungkan Ho dengan No, Ho dengan Ka, Ka dengan Ma, dan Ka dengan To. Penduduk kepulauan Honomakato berharap dibangun dua jembatan kayu lagi agar jika salah satu jembatan kayu putus, setiap pulau tetap masih bisa mencapai daratan lewat pulau Ho, karena jembatan dari Ho ke daratan tak mungkin rusak.\n\nTantangan: Jembatan yang mana?",
+      "options": {
+        "A": "Ho dengan To, dan No dengan Ma",
+        "B": "Ka dengan No, dan No dengan Ma",
+        "C": "Ho dengan To, dan Ma dengan To",
+        "D": "Dua jembatan kayu tidak cukup untuk itu"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 3,
+      "text": "Andi sedang mengadakan sebuah acara di kampusnya. Dia memiliki sejumlah acara yang ingin dia selenggarakan pada hari yang sama. Setiap acara memiliki waktu mulai dan waktu selesai yang berbeda. Andi ingin menyusun jadwal yang menampung sebanyak mungkin acara tanpa adanya tumpang tindih. Berikut adalah data acaranya:\nAcara 1: waktu mulai 10.00, waktu selesai 12.00\nAcara 2: waktu mulai 9.30, waktu selesai 11.00\nAcara 3: waktu mulai 9.00, waktu selesai 10.30\nAcara 4: waktu mulai 11.00, waktu selesai 12.30\n\nTentukan jadwal optimal yang dapat menampung sebanyak mungkin acara tanpa adanya tumpang tindih.\n\nTantangan: Maksimum jumlah acara yang bisa dijalankan tanpa tumpang tindih pada hari yang sama adalah …",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "Tidak dapat ditentukan"
+      },
+      "answer": "B",
+      "schedule": [
+        {
+          "id": 1,
+          "start": "10.00",
+          "end": "12.00"
+        },
+        {
+          "id": 2,
+          "start": "09.30",
+          "end": "11.00"
+        },
+        {
+          "id": 3,
+          "start": "09.00",
+          "end": "10.30"
+        },
+        {
+          "id": 4,
+          "start": "11.00",
+          "end": "12.30"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Aulia sedang berpetualang di dunia fantasi. Suatu hari, ia menemukan sebuah pintu dan beberapa patung yang sedang berbaris dengan setiap patung memiliki tinggi yang berbeda. Pada masing-masing patung memiliki tuas. Apabila tuas patung ditarik, maka patung di sebelahnya (depan dan belakang) akan saling bertukar sehingga patung-patung tersebut menjadi terurut.\n\nContoh: Apabila ada patung dengan tinggi 6853, maka jika tuas pada patung 5 ditarik, urutan patung akan menjadi 6,3,5,8.\n\nPertanyaan: Apabila urutan patung pada awalnya adalah 7, 3, 9, 8, 2, maka berapa tarikan tuas minimal agar patung terurut dari yang terpendek sampai yang tertinggi?",
+      "options": {
+        "A": "2",
+        "B": "1",
+        "C": "3",
+        "D": "7",
+        "E": "5"
+      },
+      "answer": "A",
+      "initial_order": [
+        7,
+        3,
+        9,
+        8,
+        2
+      ],
+      "target_order": [
+        2,
+        3,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "id": 5,
+      "text": "function test(n) {\n  if (n <= 2) {\n    return n;\n  } else {\n    return n + test(n-2);\n  }\n}\n\nBerapakah nilai dari test(10)?",
+      "options": {
+        "A": "9",
+        "B": "15",
+        "C": "25",
+        "D": "30",
+        "E": "35"
+      },
+      "answer": "D"
+    }
+  ]
+}

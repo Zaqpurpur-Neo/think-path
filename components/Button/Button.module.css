@@ -1,0 +1,31 @@
+.btn, .outline {
+	position: relative;
+	padding: .75em 1.25em;
+	font-size: 1.0125em;
+	border: none;
+	background: var(--midnight-green);
+	border-radius: 8px;
+	cursor: pointer;
+	color: #fff;
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	gap: .5em;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.btn:hover {
+	background: var(--hover-midnight);
+}
+
+.disabled {
+	opacity: .5;
+	cursor: not-allowed;
+}
+
+.outline {
+	background: none;
+	color: var(--midnight-green);
+	box-shadow: 0 0 0 1px var(--light-gray) inset;
+}
