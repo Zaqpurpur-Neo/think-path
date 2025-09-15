@@ -7,10 +7,11 @@ import styles from "@/styles/Dashboard.module.css"
 
 import { axim } from "@/lib/axim";
 import { UserContextType } from "@/types";
-import { BookOpen, Trophy } from "lucide-react";
+import { BookOpen, CircleCheckBig, Trophy } from "lucide-react";
 import { useEffect, useState } from "react";
 import ModuleBox from "@/components/ModuleBox";
 import { Bab, ProgressStatus } from "@/generated/prisma";
+import StatusBox from "@/components/StatusBox";
 
 type Pages = "dashboard" | "progress";
 
@@ -25,7 +26,9 @@ async function loadModule(userCtx: UserContextType) {
 }
 
 function HomeSection({ modules, userId }) {
-	const [move, setMove] = useState(false)
+	const [move, setMove] = useState(false);
+	const [moduleTotal, setModuleTotal] = useState(1);
+	const [moduleDone, setModuleDone] = useState(1);
 
 	const handleOpenend = async (postId: number) => {
 		if(userId !== undefined || userId !== null) {
@@ -38,9 +41,38 @@ function HomeSection({ modules, userId }) {
 		}
 	}
 
+	const countModuleDone = (result: (Bab & { status: ProgressStatus })[]) => {
+		for (let item of result) {
+			if(item.id === 1 && item.status === "DONE_READING") {
+				setModuleDone(prev => prev + 1);
+			} else {
+				if(item.status === "QUIZ_ATTEMPT") setModuleDone(prev => prev + 1)
+			}
+		}
+		setModuleDone(prev => prev - 1)
+	}
+
+	useEffect(() => {
+		if(modules?.result !== undefined) {
+			setModuleTotal(modules.result.length);
+			countModuleDone(modules.result)
+		}
+	}, [modules?.result])
+
 	return (
 		<div className={`${styles.homeSection} ${move && styles.fadeOut}`}>
 			<div className={styles.homeInner}>
+				<div className={styles.moduleSectionTop}>
+					<StatusBox 
+						title="Progress Keseluruhan" from={0} to={moduleDone} 
+						maxValue={moduleTotal} format="percentage" 
+						icons={BookOpen}/>
+					<StatusBox 
+						title="Modul Selesai" from={0} 
+						to={moduleDone} maxValue={moduleTotal} format="slice"
+						icons={CircleCheckBig} />
+
+				</div>
 				<h1 className={styles.titleModule}>Modul Pembelajaran</h1>
 				<div className={styles.moduleSection}>
 					{modules?.result && modules.result.map((item: Bab & { status: ProgressStatus })=> {

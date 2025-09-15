@@ -1,31 +1,39 @@
 {
   "questions": [
     {
-      "id": 1,
+      "id": "1",
       "text": "Sebuah lebah robot memiliki 4 tombol panah di punggungnya. Lebah robot itu bergerak seperti pada gambar berikut.\n\nSederetan penekanan tombol yang diberikan akan diingat sebagai program yang akan dijalankan robot. Tedapat juga tombol GO untuk memulai gerakan yang akan dilakukan sesuai dengan program. Contoh: mula-mula lebah bergerak maju, kemudian berputar kekiri, lalu bergerak maju. Penekanan GO berikutnya akan menyebabkan gerakan yang sama. Empat anak bermain dengan robot-robot lebahnya. Masing-masing membuat programnya sendiri-sendiri untuk lebah robot miliknya. Mereka menekan tombol GO dan kemudian lebah robot bergerak. Mereka menekan tombol GO kembali sekali lagi namun hanya satu saja yang kembali ke posisi semula.\n\nPertanyaan: Manakah deretan penekanan tombol yang mengembalikan robot lebah ke posisi dan arah semula?",
+      "property": ["image-answer", "image-question"],
       "options": {
-        "A": "Program A",
-        "B": "Program B",
-        "C": "Program C",
-        "D": "Program D",
-        "E": "Program E"
+        "A": "/images/soal/modul5no1a.png",
+        "B": "/images/soal/modul5no1b.png",
+        "C": "/images/soal/modul5no1c.png",
+        "D": "/images/soal/modul5no1d.png"
       },
-      "answer": "C"
+      "answer": "C",
+      "image": "/images/soal/modul5no1.png",
+	  "image-description": "Gambar ini menampilkan sebuah ilustrasi seperti permainan logika berbasis simbol. Di bagian atas ada karakter wajah bulat bergaris kuning dengan beberapa titik berwarna. Di bawahnya terdapat enam baris operasi, masing-masing berisi gambar berbentuk persegi panjang dengan simbol lingkaran kuning di dalamnya, serta tanda operasi penjumlahan (+) dan hasil (=). Simbol tambahan berupa panah ke atas, panah ke bawah, dan panah melingkar digunakan untuk memodifikasi gambar. Soal ini biasanya berhubungan dengan pola, transformasi simbol, atau aturan logika visual.",
+	  "answer-description": "Untuk menemukan deretan penekanan tombol yang mengembalikan robot lebah ke posisi dan arah semula setelah dua kali penekanan tombol GO, kita harus menganalisis setiap opsi. Mari kita asumsikan lebah robot memulai dari posisi (0,0) dan menghadap ke atas. Pilihan A: Maju, putar kiri, maju, putar kiri. Gerakan pertama: Robot bergerak maju ke (0,1), lalu berbelok ke kiri. Robot bergerak maju lagi ke (-1,1) dan berbelok lagi ke kiri. Robot berada di posisi baru dan arah baru. Gerakan kedua: Robot akan mengulangi gerakan yang sama dari posisi dan arah barunya. Karena gerakannya tidak memutar balik ke posisi awal, robot tidak akan kembali ke posisi semula. Pilihan B: Mundur, putar kanan, mundur, mundur. Gerakan pertama: Robot bergerak mundur ke (0,-1), lalu berbelok ke kanan. Robot bergerak mundur lagi dua kali dari posisi barunya. Robot berada jauh dari posisi awal. Gerakan kedua: Robot akan terus menjauh dari posisi awal. Ini bukan jawaban yang tepat. Pilihan C: Maju, putar kiri, maju, putar kiri. Gerakan pertama: Robot bergerak maju 1 langkah, lalu berputar 90 derajat ke kiri (sekarang menghadap ke kiri). Kemudian, robot bergerak maju 1 langkah, lalu berputar lagi 90 derajat ke kiri (sekarang menghadap ke bawah). Robot berakhir di posisi baru. Gerakan kedua: Robot mengulangi program dari posisi dan arah barunya. Robot bergerak maju 1 langkah (sekarang menghadap ke bawah), lalu berputar 90 derajat ke kiri (sekarang menghadap ke kanan). Kemudian, robot bergerak maju 1 langkah (sekarang berada di titik awal), lalu berputar lagi 90 derajat ke kiri (sekarang menghadap ke atas, kembali ke arah awal). Setelah dua kali menjalankan program ini, robot kembali ke posisi awal dan arah semula. Ini adalah jawaban yang benar. Pilihan D: Putar kiri, maju, putar kiri, putar kiri. Gerakan pertama: Robot berputar ke kiri, bergerak maju, lalu berputar lagi dua kali ke kiri. Robot akan berakhir di posisi dan arah yang berbeda dari awalnya. Gerakan kedua: Robot akan terus bergerak menjauhi posisi awal. Ini bukan jawaban yang tepat.",
+      "ai_context": null
     },
     {
-      "id": 2,
+      "id": "2",
       "text": "Kepulauan Honomakato terdiri dari lima pulau yang indah yaitu Ho, No, Ma, Ka, dan To. Pulau terbesar yaitu Ho terhubung ke daratan (pulau utama) oleh sebuah jembatan besar terbuat dari besi yang kokoh. Selain itu, terdapat jembatan-jembatan kayu yang menghubungkan Ho dengan No, Ho dengan Ka, Ka dengan Ma, dan Ka dengan To. Penduduk kepulauan Honomakato berharap dibangun dua jembatan kayu lagi agar jika salah satu jembatan kayu putus, setiap pulau tetap masih bisa mencapai daratan lewat pulau Ho, karena jembatan dari Ho ke daratan tak mungkin rusak.\n\nTantangan: Jembatan yang mana?",
+      "property": ["image-question"],
       "options": {
         "A": "Ho dengan To, dan No dengan Ma",
         "B": "Ka dengan No, dan No dengan Ma",
         "C": "Ho dengan To, dan Ma dengan To",
         "D": "Dua jembatan kayu tidak cukup untuk itu"
       },
-      "answer": "A"
+      "answer": "A",
+      "image": "/images/soal/modul5no2.png",
+	       "ai_context": null
     },
     {
-      "id": 3,
+      "id": "3",
       "text": "Andi sedang mengadakan sebuah acara di kampusnya. Dia memiliki sejumlah acara yang ingin dia selenggarakan pada hari yang sama. Setiap acara memiliki waktu mulai dan waktu selesai yang berbeda. Andi ingin menyusun jadwal yang menampung sebanyak mungkin acara tanpa adanya tumpang tindih. Berikut adalah data acaranya:\nAcara 1: waktu mulai 10.00, waktu selesai 12.00\nAcara 2: waktu mulai 9.30, waktu selesai 11.00\nAcara 3: waktu mulai 9.00, waktu selesai 10.30\nAcara 4: waktu mulai 11.00, waktu selesai 12.30\n\nTentukan jadwal optimal yang dapat menampung sebanyak mungkin acara tanpa adanya tumpang tindih.\n\nTantangan: Maksimum jumlah acara yang bisa dijalankan tanpa tumpang tindih pada hari yang sama adalah …",
+      "property": [],
       "options": {
         "A": "1",
         "B": "2",
@@ -34,32 +42,20 @@
         "E": "Tidak dapat ditentukan"
       },
       "answer": "B",
-      "schedule": [
-        {
-          "id": 1,
-          "start": "10.00",
-          "end": "12.00"
-        },
-        {
-          "id": 2,
-          "start": "09.30",
-          "end": "11.00"
-        },
-        {
-          "id": 3,
-          "start": "09.00",
-          "end": "10.30"
-        },
-        {
-          "id": 4,
-          "start": "11.00",
-          "end": "12.30"
-        }
-      ]
+      "image": null,
+      "ai_context": {
+        "schedule": [
+          { "id": 1, "start": "10.00", "end": "12.00" },
+          { "id": 2, "start": "09.30", "end": "11.00" },
+          { "id": 3, "start": "09.00", "end": "10.30" },
+          { "id": 4, "start": "11.00", "end": "12.30" }
+        ]
+      }
     },
     {
-      "id": 4,
+      "id": "4",
       "text": "Aulia sedang berpetualang di dunia fantasi. Suatu hari, ia menemukan sebuah pintu dan beberapa patung yang sedang berbaris dengan setiap patung memiliki tinggi yang berbeda. Pada masing-masing patung memiliki tuas. Apabila tuas patung ditarik, maka patung di sebelahnya (depan dan belakang) akan saling bertukar sehingga patung-patung tersebut menjadi terurut.\n\nContoh: Apabila ada patung dengan tinggi 6853, maka jika tuas pada patung 5 ditarik, urutan patung akan menjadi 6,3,5,8.\n\nPertanyaan: Apabila urutan patung pada awalnya adalah 7, 3, 9, 8, 2, maka berapa tarikan tuas minimal agar patung terurut dari yang terpendek sampai yang tertinggi?",
+      "property": [],
       "options": {
         "A": "2",
         "B": "1",
@@ -68,24 +64,16 @@
         "E": "5"
       },
       "answer": "A",
-      "initial_order": [
-        7,
-        3,
-        9,
-        8,
-        2
-      ],
-      "target_order": [
-        2,
-        3,
-        7,
-        8,
-        9
-      ]
+      "image": null,
+      "ai_context": {
+        "initial_order": [7, 3, 9, 8, 2],
+        "target_order": [2, 3, 7, 8, 9]
+      }
     },
     {
-      "id": 5,
+      "id": "5",
       "text": "function test(n) {\n  if (n <= 2) {\n    return n;\n  } else {\n    return n + test(n-2);\n  }\n}\n\nBerapakah nilai dari test(10)?",
+      "property": [],
       "options": {
         "A": "9",
         "B": "15",
@@ -93,7 +81,10 @@
         "D": "30",
         "E": "35"
       },
-      "answer": "D"
+      "answer": "D",
+      "image": null,
+      "ai_context": null
     }
   ]
 }
+

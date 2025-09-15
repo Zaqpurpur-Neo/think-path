@@ -1,8 +1,9 @@
 {
   "questions": [
     {
-      "id": 1,
+      "id": "1",
       "text": "Budi memiliki setumpuk panekuk di piring A (besar di bawah, kecil di atas). Ia ingin memindahkan semuanya ke piring C menggunakan piring bantu B. Hanya satu panekuk per langkah dan tidak boleh panekuk besar di atas yang kecil. Berapa langkah minimum untuk 5 panekuk?",
+      "property": [],
       "options": {
         "A": "31",
         "B": "34",
@@ -10,11 +11,15 @@
         "D": "42",
         "E": "35"
       },
-      "answer": "A"
+      "answer": "A",
+      "image": null,
+      "tabel": null,
+      "ai_context": null
     },
     {
-      "id": 2,
+      "id": "2",
       "text": "Berapa luas bangun gabungan: persegi panjang 4×3 menempel pada segitiga siku-siku beralas 2 dan tinggi 3?",
+      "property": ["image-question"],
       "options": {
         "A": "24",
         "B": "19",
@@ -23,20 +28,20 @@
         "E": "3"
       },
       "answer": "C",
-      "figure": {
-        "rectangle": {
-          "width": 4,
-          "height": 3
-        },
-        "right_triangle": {
-          "base": 2,
-          "height": 3
+      "image": "/images/soal/modul2no2.png",
+      "tabel": null,
+	  "image-description": "Gambar ini menunjukkan sebuah bangun datar gabungan yang terdiri dari persegi panjang berukuran 3 × 4 dan segitiga siku-siku beralas 2 serta tinggi 3. Judul pada gambar adalah 'Problem-Solving #5 – Dekomposisi' dengan strategi membuat masalah menjadi lebih kecil. Gambar ini biasanya digunakan untuk soal menghitung luas bangun gabungan dengan cara memecahnya menjadi bentuk sederhana.",
+      "ai_context": {
+        "figure": {
+          "rectangle": { "width": 4, "height": 3 },
+          "right_triangle": { "base": 2, "height": 3 }
         }
       }
     },
     {
-      "id": 3,
+      "id": "3",
       "text": "Diberikan tabel bilangan (7 kolom × 7 baris). Berapakah bilangan terbesar dari tabel tersebut?",
+      "property": ["table"],
       "options": {
         "A": "65",
         "B": "67",
@@ -45,78 +50,25 @@
         "E": "99"
       },
       "answer": "B",
+      "image": null,
       "table": {
         "columns": 7,
         "rows": [
-          [
-            5,
-            1,
-            2,
-            4,
-            5,
-            52,
-            21
-          ],
-          [
-            65,
-            2,
-            66,
-            5,
-            2,
-            15,
-            16
-          ],
-          [
-            5,
-            5,
-            53,
-            12,
-            52,
-            10,
-            24
-          ],
-          [
-            3,
-            1,
-            2,
-            14,
-            42,
-            15,
-            64
-          ],
-          [
-            5,
-            25,
-            16,
-            15,
-            4,
-            21,
-            12
-          ],
-          [
-            7,
-            21,
-            15,
-            67,
-            24,
-            16,
-            14
-          ],
-          [
-            0,
-            14,
-            24,
-            63,
-            21,
-            12,
-            15
-          ]
+          [5, 1, 2, 4, 5, 52, 21],
+          [65, 2, 66, 5, 2, 15, 16],
+          [5, 5, 53, 12, 52, 10, 24],
+          [3, 1, 2, 14, 42, 15, 64],
+          [5, 25, 16, 15, 4, 21, 12],
+          [7, 21, 15, 67, 24, 16, 14],
+          [0, 14, 24, 63, 21, 12, 15]
         ]
-      }
+      },
+      "ai_context": null
     },
     {
-      "id": 4,
+      "id": "4",
       "text": "Ada 4 toples dengan jumlah permen awal sama. Setelah diambil: Toples1 ambil 3 sisa 2; Toples2 ambil 5 sisa 3; Toples3 ambil 7 sisa 2; Toples4 ambil 9 sisa ?. Berapa sisa permen pada Toples4?",
+      "property": [],
       "options": {
         "A": "4",
         "B": "3",
@@ -125,31 +77,24 @@
         "E": "1"
       },
       "answer": "C",
-      "constraints": {
-        "congruences": [
-          {
-            "modulus": 3,
-            "remainder": 2
-          },
-          {
-            "modulus": 5,
-            "remainder": 3
-          },
-          {
-            "modulus": 7,
-            "remainder": 2
-          }
-        ],
-        "smallest_solution": 23,
-        "operation_toples4": {
-          "take": 9,
-          "remainder": 5
+      "image": null,
+      "tabel": null,
+      "ai_context": {
+        "constraints": {
+          "congruences": [
+            { "modulus": 3, "remainder": 2 },
+            { "modulus": 5, "remainder": 3 },
+            { "modulus": 7, "remainder": 2 }
+          ],
+          "smallest_solution": 23,
+          "operation_toples4": { "take": 9, "remainder": 5 }
         }
       }
     },
     {
-      "id": 5,
+      "id": "5",
       "text": "PT. SMJ harus mengirim 53.000 L air. Pilih kombinasi truk paling sedikit: A=1.000L, B=2.000L, C=4.000L, D=8.000L, F=16.000L, E=32.000L.",
+      "property": [],
       "options": {
         "A": "4 unit E",
         "B": "1 unit A, 1 unit C, 1 unit E, 1 unit F",
@@ -158,57 +103,26 @@
         "E": "1 unit D, 1 unit E, 1 unit F"
       },
       "answer": "B",
-      "truck_types": [
-        {
-          "type": "A",
-          "capacity": 1000,
-          "max_units": 14
-        },
-        {
-          "type": "B",
-          "capacity": 2000,
-          "max_units": 12
-        },
-        {
-          "type": "C",
-          "capacity": 4000,
-          "max_units": 10
-        },
-        {
-          "type": "D",
-          "capacity": 8000,
-          "max_units": 8
-        },
-        {
-          "type": "F",
-          "capacity": 16000,
-          "max_units": 6
-        },
-        {
-          "type": "E",
-          "capacity": 32000,
-          "max_units": 4
-        }
-      ],
-      "chosen_combo": [
-        {
-          "type": "E",
-          "units": 1
-        },
-        {
-          "type": "F",
-          "units": 1
-        },
-        {
-          "type": "C",
-          "units": 1
-        },
-        {
-          "type": "A",
-          "units": 1
-        }
-      ],
-      "total_volume": 53000
+      "image": null,
+      "tabel": null,
+      "ai_context": {
+        "truck_types": [
+          { "type": "A", "capacity": 1000, "max_units": 14 },
+          { "type": "B", "capacity": 2000, "max_units": 12 },
+          { "type": "C", "capacity": 4000, "max_units": 10 },
+          { "type": "D", "capacity": 8000, "max_units": 8 },
+          { "type": "F", "capacity": 16000, "max_units": 6 },
+          { "type": "E", "capacity": 32000, "max_units": 4 }
+        ],
+        "chosen_combo": [
+          { "type": "E", "units": 1 },
+          { "type": "F", "units": 1 },
+          { "type": "C", "units": 1 },
+          { "type": "A", "units": 1 }
+        ],
+        "total_volume": 53000
+      }
     }
   ]
 }
+

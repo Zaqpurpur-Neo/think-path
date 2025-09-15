@@ -23,8 +23,25 @@
 	gap: 1.25em
 }
 
+.innerWrapper {
+	gap: 1.75em;
+	padding: 1.5em;
+	animation: fade-in .5s ease;
+	animation-fill-mode: both;
+	animation-delay: .5s;
+}
+
 .innerWrapperMini {
-	padding: 1.25em;
+	padding: 1.75em;
+	animation: fade-in .5s ease;
+	animation-fill-mode: both;
+	animation-delay: .7s;
+}
+
+.tx-1 {
+	animation: fade-in .5s ease;
+	animation-fill-mode: both;
+	animation-delay: .6s;
 }
 
 .topper {
@@ -45,6 +62,9 @@
 	width: fit-content;
 	border-radius: .6em;
 	cursor: pointer;
+	animation: fade-in .5s ease;
+	animation-fill-mode: both;
+	animation-delay: .25s;
 
 	&:hover {
 		background: #dfdfdf;
@@ -64,9 +84,11 @@
 	position: relative;
 	margin: .5em 0;
 
+	align-items: flex-start;
+
 	& p {
 		width: 80%;
-		font-size: 1.15em;
+		font-size: 1.1em;
 	}
 }
 
@@ -84,6 +106,10 @@
 	color: var(--color-green-800);
 	background: var(--color-green-200);
 	border-radius: 6px;
+	display: flex;
+	gap: .5em;
+	align-items: center;
+	font-size: 1.25em;
 }
 
 .resultAnswerWrong {
@@ -93,4 +119,83 @@
 	color: var(--color-red-800);
 	background: var(--color-red-200);
 	border-radius: 6px;
+	display: flex;
+	gap: .5em;
+	align-items: center;
+	font-size: 1.25em;
+}
+
+.imageQuiz {
+	max-width: 27em;
+}
+
+.imageAnswer {
+	max-width: 24em;
+}
+
+.optionsItem {
+	padding: .7em;
+	position: relative;
+	display: flex;
+	gap: .5em;
+	align-items: flex-start;
+	font-size: 1.25em;
+}
+
+.scoreFlex {
+	position: relative;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	transform: translateX(-1em);
+}
+
+.scoreTitle {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	& h3 {
+		font-size: 2.25em;
+	}
+}
+
+.scoreActionFlex {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.aiResult {
+	margin-top: .85em;
+	padding: .95em;
+	background: #efefef;
+	padding: 1.1em;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: .5em;
+
+	ul, ol {
+		padding-left: 1.1em;
+	}
+}
+
+.aiResultTitle {
+	position: relative;
+	display: flex;
+	gap: .5em;
+	align-items: center;
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+		transform: translateY(2em);
+	} to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }

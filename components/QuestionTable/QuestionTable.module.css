@@ -1,0 +1,31 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.caption {
+  caption-side: bottom;
+  text-align: center;
+  padding: 0.5rem;
+  color: #666;
+  font-style: italic;
+}
+
+.th,
+.td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.th {
+  background-color: #f4f4f4;
+  font-weight: 600;
+}
+
+.tr:nth-child(even) {
+  background-color: #fafafa;
+}
+

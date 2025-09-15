@@ -94,6 +94,8 @@
 	position: relative;
 	display: flex;
 	gap: .5em;
+	align-items: center;
+	font-size: 1.25em;
 }
 
 .navigation {
@@ -135,4 +137,12 @@
 	&:hover {
 		background: var(--jade);
 	}
+}
+
+.imageQuiz {
+	max-width: 27em;
+}
+
+.imageAnswer {
+	max-width: 24em;
 }

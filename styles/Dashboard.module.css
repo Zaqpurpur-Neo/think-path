@@ -15,9 +15,12 @@
 	flex-direction: column;
 	gap: 1.25em;
 	margin-top: 2.5em;
+}
 
+.titleModule {
 	animation: fade-in 1s ease;
 	animation-fill-mode: both;
+	animation-delay: .25s;
 }
 
 .moduleSection {
@@ -27,7 +30,16 @@
 
 	animation: fade-in 1s ease;
 	animation-fill-mode: both;
-	animation-delay: .25s;
+	animation-delay: .5s;
+}
+
+.moduleSectionTop {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.05em;
+
+	animation: fade-in 1s ease;
+	animation-fill-mode: both;
 }
 
 @keyframes fade-out {

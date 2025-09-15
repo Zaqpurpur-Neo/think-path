@@ -2,27 +2,18 @@ import Button from "@/components/Button";
 import { Label } from "@/components/Label";
 import Navbar from "@/components/Navbar";
 import { Progress } from "@/components/Progress";
+import { QuestionTable } from "@/components/QuestionTable";
 import { RadioGroup, RadioGroupItem } from "@/components/Radio";
 import { useUser } from "@/context/UserContext";
 import { ProgressStatus } from "@/generated/prisma";
 import useAuth from "@/hooks/useAuth";
 import { axim } from "@/lib/axim";
 import styles from "@/styles/Quiz.module.css"
+import { Question, QuestionOptionKey } from "@/types";
 import { ArrowLeft, BookOpen, CircleQuestionMark, Trophy } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react";
-
-type Answer = "A" | "B" | "C" | "D" | "E"
-
-type Quiz = {
-	id: number,
-	text: string,
-	options: {
-		[key: Answer]: any
-	},
-	answer: Answer
-}
 
 export default function Quiz() {
 	const router = useRouter();
@@ -46,8 +37,8 @@ export default function Quiz() {
 		}
 	]
 	const [selectedPage, setSelectedPage] = useState(null);
-	const [quiz, setQuiz] = useState<Quiz[]>([]);
-	const [answer, setAnswer] = useState<{ [key: string]: null | Answer }>({
+	const [quiz, setQuiz] = useState<Question[]>([]);
+	const [answer, setAnswer] = useState<{ [key: string]: null | QuestionOptionKey }>({
 		"1": null,
 		"2": null,
 		"3": null,
@@ -56,8 +47,8 @@ export default function Quiz() {
 	})
 	const [percentage, setPercantage] = useState(0);
 
-	const currentQuiz: Quiz = quiz[currentPage - 1];
-	const currentAnswer: Answer | null = answer[`${currentPage}`]
+	const currentQuiz: Question = quiz[currentPage - 1];
+	const currentAnswer: QuestionOptionKey | null = answer[`${currentPage}`]
 
 	useEffect(() => {
 		const ct = Math.round(currentPage/totalPage * 100)
@@ -147,15 +138,31 @@ export default function Quiz() {
 					</div>
 
 					<p className={styles.question}>
-						{currentQuiz && currentQuiz.text}
+						{currentQuiz && currentQuiz.text.split("\n").map(item => <>{item}<br/></>)}
 					</p>
+
+					{
+						(currentQuiz && currentQuiz.property.includes("image-question")) 
+							&& 
+						<img className={styles.imageQuiz} srcSet={currentQuiz?.image} />
+					}
+
+					{
+						(currentQuiz && currentQuiz.property.includes("table"))
+							&&
+						<div style={{ padding: "1rem" }}>
+							<QuestionTable table={currentQuiz.table} caption="table 7x7" />
+						</div>
+					}
 
 					<div className={styles.options}>
 						<RadioGroup value={currentAnswer} onValueChange={handleChange}>
 							{currentQuiz && Object.entries(currentQuiz.options).map(item => {
 								return <div key={item[0]} className={styles.optionsItem}>
 									<RadioGroupItem id={"id-" + item[0]} value={`${item[0]}`} />
-									<Label htmlFor={"id-" + item[0]}>{item[1]}</Label>
+									<Label htmlFor={"id-" + item[0]}>{
+										currentQuiz.property.includes("image-answer") ? <img className={styles.imageAnswer} srcSet={item[1]} /> : item[1]
+									}</Label>
 								</div>
 							})}
 						</RadioGroup>

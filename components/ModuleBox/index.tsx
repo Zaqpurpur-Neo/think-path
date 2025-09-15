@@ -5,6 +5,7 @@ import { Progress } from "../Progress";
 import { useEffect, useState } from "react";
 import Button from "../Button";
 import { useRouter } from "next/router";
+import CountUp from "../CountUp";
 
 type Data = {
 	id: number,
@@ -86,7 +87,14 @@ export default function ModuleBox({ data, onClick }: { data: Data }) {
 			<div className={styles.progress}>
 				<div className={styles.progressId}>
 					<p>Progress</p>
-					<p>{percentage}%</p>
+					<p>
+					<CountUp 
+					 from={0}
+					 to={percentage}
+					 direction="up"
+					 duration={2}
+					/> % 
+					</p>
 				</div>
 				<Progress delay={200} value={percentage} />
 			</div>

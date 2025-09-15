@@ -12,7 +12,6 @@ export default async function handler(
 
 		const token = authHeader.split(" ")[1];
 		const decoded = verifyToken(token);
-		console.log("LOG:", decoded, token)
 		if(!decoded) return res.status(401).json({ error: "Invalid Token" })
 
 		const user = await prisma.user.findUnique({ 
