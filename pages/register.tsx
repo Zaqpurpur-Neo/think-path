@@ -34,7 +34,19 @@ export default function Register() {
 		setIsSubmitted(true);
 
 		if(form.password !== form.retryPassword) {
-			setError("Missmatching Password");
+			setError("Password Tidak Sama");
+			setIsSubmitted(false)
+			return;
+		}
+
+		if(form.educationLevel.length <= 0) {
+			setError("Pilih Jenjang Anda");
+			setIsSubmitted(false)
+			return;
+		}
+
+		if(form.birthday.length <= 0) {
+			setError("Masukan Tanggal Lahir Anda");
 			setIsSubmitted(false)
 			return;
 		}

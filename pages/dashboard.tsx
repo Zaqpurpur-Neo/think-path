@@ -26,8 +26,7 @@ async function loadModule(userCtx: UserContextType) {
 	return data
 }
 
-function HomeSection({ modules, userId }) {
-	const [move, setMove] = useState(false);
+function HomeSection({ modules, userId, move, setMove }) {
 	const [moduleTotal, setModuleTotal] = useState(1);
 	const [moduleDone, setModuleDone] = useState(1);
 
@@ -51,6 +50,7 @@ function HomeSection({ modules, userId }) {
 					if(item.status === "QUIZ_ATTEMPT") setModuleDone(prev => prev + 1)
 				}
 			}
+
 			setModuleDone(prev => prev - 1)
 		}
 	}
@@ -67,7 +67,7 @@ function HomeSection({ modules, userId }) {
 		}
 	}, [moduleTotal])
 
-	return (
+	return moduleTotal > 1 && (
 		<div className={`${styles.homeSection} ${move && styles.fadeOut}`}>
 			<div className={styles.homeInner}>
 				<div className={styles.moduleSectionTop}>
@@ -107,6 +107,7 @@ function ProgressSection() {
 }
 
 function Dashboard() {
+	const [move, setMove] = useState(false);
 	const { logout } = useAuth();
 	const user = useUser();
 
@@ -125,7 +126,7 @@ function Dashboard() {
 		}
 	}
 	const [selectedPage, setSelectedPage] = useState<Pages>("dashboard");
-	const [modules, setModules] = useState([])
+	const [modules, setModules] = useState<{ result: Bab[] } | null>(null)
 
 	useEffect(() => {
 		async function rb() {
@@ -133,7 +134,7 @@ function Dashboard() {
 			setModules(data)
 		}
 		rb()
-	}, [,user])
+	}, [user.loading])
 
 	return user.loading ? "loading" : (
 		<div className="container">
@@ -144,10 +145,11 @@ function Dashboard() {
 				selectedPage={selectedPage}
 				setSelectedPage={setSelectedPage}
 				onLogout={logout}
+				isSlideOut={move}
 			/>
 
 			{selectedPage === "dashboard" ?
-				<HomeSection userId={user.user?.id} modules={modules} /> : 
+				(modules !== null && <HomeSection move={move} setMove={setMove} userId={user.user?.id} modules={modules} />) : 
 				<ProgressSection />
 			}
 		</div>

@@ -26,7 +26,8 @@ export function UserProvider({ children }: { children: ReactNode }) {
 			setUser(data.user);
 			setLoading(false);
 		} else {
-			if(res.status == 401) {
+			console.log("what happens")
+			if(res.status >= 400) {
 				router.push("/login")
 			}
 		}

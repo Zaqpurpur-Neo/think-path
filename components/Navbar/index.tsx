@@ -10,12 +10,12 @@ function objToArray(obj = {}) {
 	return array;
 }
 
-export default function Navbar({ pages, user, selectedPage, setSelectedPage, onLogout, normalRoute }) {
+export default function Navbar({ pages, user, selectedPage, setSelectedPage, onLogout, normalRoute, isSlideOut = false}) {
 	const router = useRouter();
 	const pageser = objToArray(pages);
 
 	return (
-		<div className={styles.navbar}>
+		<div className={`${styles.navbar} ${isSlideOut && styles.slideOut}`}>
 			<h1 className={styles.title}>ThinkPath</h1>
 			<ul>
 				{pageser.map((item, idx) => {

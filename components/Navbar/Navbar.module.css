@@ -8,6 +8,8 @@
 	align-items: center;
 	border-bottom: 1px solid #cfcfcf;
 	background: #fff;
+	animation: slide-in .5s ease;
+	animation-fill-mode: both;
 
 	& ul {
 		position: relative;
@@ -101,6 +103,11 @@
 
 }
 
+.slideOut {
+	animation: slide-out .4s ease;
+	animation-fill-mode: both;
+}
+
 @keyframes ic-anim {
 	0% {
 		transform: rotate(0deg);
@@ -110,5 +117,21 @@
 		transform: rotate(12deg);
 	} 100% {
 		transform: rotate(0deg);
+	}
+}
+
+@keyframes slide-in {
+	from {
+		transform: translateY(-5em);
+	} to {
+		transform: translateY(0);
+	}
+}
+
+@keyframes slide-out {
+	from {
+		transform: translateY(0);
+	} to {
+		transform: translateY(-5em);
 	}
 }

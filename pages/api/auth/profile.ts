@@ -19,6 +19,8 @@ export default async function handler(
 			select: { id: true, email: true, name: true, birthday: true, educationLevel: true }
 		})
 
+		if(user === null) res.status(401).json({ error: "Not Found" })
+		
 		res.status(200).json({ user });
 	} catch(err) {
 		res.status(400).json({

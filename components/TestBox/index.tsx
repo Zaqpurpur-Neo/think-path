@@ -19,7 +19,7 @@ export default function TestBox({
 
 			<Button 
 				onClick={() => {
-					router.push("/test-result")
+					if(isUnlock) router.push("/test-result")
 				}}
 				outline={!isUnlock} 
 				disabled={!isUnlock}>
