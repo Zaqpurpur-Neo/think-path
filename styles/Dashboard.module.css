@@ -35,8 +35,10 @@
 
 .moduleSectionTop {
 	display: flex;
-	flex-wrap: wrap;
-	gap: 1.05em;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: .75em;
 
 	animation: fade-in 1s ease;
 	animation-fill-mode: both;

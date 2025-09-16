@@ -1,0 +1,244 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "text": "Pada suatu hari, Raja Sulaeman ingin mengadakan sayembara kepada rakyatnya. Ia ingin memberikan tantangan dengan hadiah sebongkah emas murni. Emas tersebut diletakkan didalam bungkus permen, bersama dengan 9998 permen lainnya (jumlah permen = 9999). Emas tersebut terlihat sama persis dengan permen lainnya, yang membedakan adalah beratnya, ia lebih berat daripada permen yang lain. Untuk dapat menyelesaikan tugas tersebut, seseorang hanya dapat menimbang permen menggunakan timbangan seperti pada gambar berikut. Supaya tantangan menjadi sulit, Raja Sulaeman ingin menentukan sebuah bilangan X, yaitu jumlah maksimum seseorang dapat melakukan penimbangan. Bisakah kamu menentukan nilai X terkecil yang memungkinkan sehingga seseorang dapat menemukan emas tersebut?",
+      "options": {
+        "A": "9999",
+        "B": "1111",
+        "C": "41",
+        "D": "10",
+        "E": "2222"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 2,
+      "text": "Paradoks merupakan pernyataan yang bertentangan dengan dirinya sendiri. Salah satu contoh paradoks yang terkenal adalah, \"Aku adalah seorang pembohong\". Di antara pilihan-pilihan berikut, manakah yang bukan merupakan paradoks?",
+      "options": {
+        "A": "Pinokio berkata, \"Hidungku tumbuh sekarang\".",
+        "B": "\"Aku tahu bahwa aku tak tahu apa-apa\".",
+        "C": "Seekor semut di atas tali yang memanjang dapat mencapai ujung tali tersebut dengan kecepatan lebih kecil relatif terhadap kecepatan peregangan tali (asumsi kecepatan keduanya konstan).",
+        "D": "Tidak ada pilihan jawaban yang benar",
+        "E": "Segala sesuatu yang kukatakan selalu salah"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 3,
+      "text": "Bedu baru saja dipromosikan sebagai manajer cabang di perusahaan tempatnya bekerja. Salah satu tugas barunya sebagai manajer adalah membuat jadwal shift bagi karyawan-karyawannya. Saat ini, semua karyawannya merupakan pekerja paruh waktu. Ia kemudian mendata jam mulai kerja dan jam akhir kerja karyawannya. Tidak semua karyawan bekerja di hari yang sama. Jam kerja setiap karyawan terdapat di tabel berikut. (Tabel: Karyawan A-G, Mulai Shift 8,8,11,12,13,14,18, Selesai Shift 12,10,14,15,15,18,21). Berdasarkan tabel di atas, tentukan urutan karyawan dalam satu hari sehingga durasi kerjanya paling lama.",
+      "options": {
+        "A": "B - C - G",
+        "B": "B - E - G",
+        "C": "D - G - F",
+        "D": "B - C - F",
+        "E": "A - B - D"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 4,
+      "text": "Karena performa Bedu yang bagus sebagai manajer cabang, ia dipromosikan menjadi Regional Manager. Ia kini bertanggung jawab terhadap daerahnya. Salah satu pekerjaannya kini adalah mengalokasikan semua karyawan tetap di suatu daerah ke toko-toko di areanya. Target dari atasannya adalah setiap karyawan tetap bekerja di satu toko. Di area Bedu terdapat karyawan-karyawan tetap dengan jadwal kerja sebagai berikut. (Tabel: Karyawan A-L, Mulai Shift 8,13,15,12,10,14,16,9,13,18,14,16, Selesai Shift 12,14,17,15,15,17,20,13,15,20,18,21). Berdasarkan jadwal di atas, tentukan jumlah minimum toko yang diperlukan agar setiap karyawan bekerja di sebuah toko.",
+      "options": {
+        "A": "5",
+        "B": "6",
+        "C": "7",
+        "D": "8",
+        "E": "10"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 5,
+      "text": "Pada suatu malam, seorang pencuri ulung memasuki sebuah rumah pejabat yang kaya raya. Di dalam rumah tersebut terdapat barang-barang berharga. Karena sudah terbiasa mencuri barang-barang berharga, pencuri tersebut dapat menilai suatu barang hanya dengan melihatnya. Berikut ini merupakan tabel yang menunjukan nilai setiap barang beserta beratnya. (Tabel: Barang A-D, Nilai 10,9,5,7, Berat 6,5,2,4). Jika pencuri tersebut hanya membawa sebuah kantong yang hanya dapat menampung barang maksimum seberat 12 satuan, maka berapakah total nilai maksimum yang dapat diperoleh oleh pencuri tersebut?",
+      "options": {
+        "A": "17",
+        "B": "19",
+        "C": "21",
+        "D": "22",
+        "E": "12"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 6,
+      "text": "Dzaki dan teman-temannya akan mengadakan buka bersama di suatu hari. Dzaki dan teman-temannya adalah ruangan nomor Y, dan gedung apartemen Dzakiayah sangat unik: dilantai dasar dia memiliki 2 ruangan, dan X ruangan di lantai selanjutnya. Sebagai contoh, misalkan X = 3, maka di lantai ruangan nomor 3, 4, dan 5, lantai keempat terdapat ruangan nomor 9, 10 dan 11. Jika apartemen Dzakiayah adalah ruangan nomor 153 dan X = 4, ke lantai berapakah Dzaki harus naik?",
+      "options": {
+        "A": "38",
+        "B": "39",
+        "C": "40",
+        "D": "41",
+        "E": "42"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 7,
+      "text": "Anda diberikan sebuah papan berukuran MXN. Anda juga diberikan sebuah keping domino berukuran 2x1. Anda dibolehkan untuk memutar posisi domino, berdiri (2x1) atau terlentang (1x2). Anda kemudian diminta untuk meletakkan sebanyak mungkin domino pada papan, sehingga kondisi berikut terpenuhi: Setiap domino menutupi 2 buah kotak pada papan. Tidak ada domino yang bertumpukan. Setiap domino harus berada di dalam papan (tidak boleh keluar papan). Sebagai contoh jika papan berukuran 3x3 kita dapat menaruh sebanyak-banyaknya 4 domino pada papan. Jika ukuran papan adalah 5x7, berapa domino maksimum yang dapat anda letakkan pada papan?",
+      "options": {
+        "A": "15",
+        "B": "16",
+        "C": "17",
+        "D": "18",
+        "E": "14"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 8,
+      "text": "Terdapat beberapa batu pada sebuah meja altar. Batu-batu tersebut berbaris dari kiri ke kanan, dan masing-masing batu memiliki warna antara Red, Green, atau Blue. Kamu diminta untuk mengambil sedikit mungkin batu dari meja tersebut 15 batu dengan urutan \"BRBRGGBRBRKGR\" berapakah minimal batu yang harus diambil?",
+      "options": {
+        "A": "2",
+        "B": "6",
+        "C": "10",
+        "D": "14",
+        "E": "8"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 9,
+      "text": "Cak Rano karena berhasil menjual mobil dan motor bekas dari hari ini Budi senang sekali karena berhasil menjual mobil dan motor bekas dari showroom miliknya. Total yang terjual hari ini adalah 9 item dengan nilai penjualan sebagai berikut: 25jt, 40jt, 80jt, 50jt, 12jt, 15jt, 15jt, 20jt Diketahui tidak ada harga penjualan motor yang melebihi harga penjualan mobil, namun demikian ada satu buah motor yang harganya sama dengan harga mobil dan ada dua buah motor yang harganya sama. Berapa jumlah motor yang berhasil dijual Budi hari itu?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "5",
+        "D": "6",
+        "E": "7"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 10,
+      "text": "Seorang pramuka yang mengikuti perkemahan di sebuah pegunungan ingin mengirim pesan kepada orang tuanya yang tinggal di kaki pegunungan itu melalui seorang kurir. Dia lupa membawa amplop maka pesan itu ditulis pada secarik kertas tanpa dimasukkan ke dapam amplop. Karena malu pesan itu terbaca oleh kurir, maka ia tulis pesan itu dalam bentuk sandi yang diajarkan orang tuanya pada waktu kecil. Orang tuanya mengajarkan untuk memberi nomor huruf A sampai dengan Z, dimulai dengan A=3, B= 4, C=5 dan seterusnya sampai Z = 2. Jika nomor huruf itu ganjil ditambah 7 (tujuh) dan jika nomor huruf itu genap dikali 3 (empat). Jadi, misal mau menulis IDC, I = 11, karena ganjil ditambah 7, jadi 11+7 = 18, 18 berarti O, jadi I menjadi O. D = 6, karena genap maka dikali 3, menjadi 18 atau O. C = 5, karena ganjil ditambah 7, menjadi 12 atau J. Jadi IDC ditulis OOJ. Jika hasil penjumlahan 7 atau perkalian 3 melebihi 26 maka akan kembali ke awal lagi. Jadi misal U=23 karena ganjil ditambah 7 menjadi 30 atau B (karena 30-26=4) Jika pramuka itu ingin menulis pesan AKU AKAN PULANG LUSA, apa yang dituliskan pramuka tersebut pada secarik kertas yang diberikan ke kurir?",
+      "options": {
+        "A": "HBB HRTT ABNHTN NBZH",
+        "B": "HRB HHIH ABBGNT HNVF",
+        "C": "HBB HRHT ABNNTN NBZH",
+        "D": "HRB HHBT ABBBNY NBHZ",
+        "E": "HRB HRHT ABNHTN NBZH"
+      },
+      "answer": "E"
+    },
+    {
+      "id": 11,
+      "text": "if (a > b) then if (a > c) then if (d > a) then x := d*d else x := a*a else if (d > c) then x := d*d else x := c*c else if (b > c) then if (d > b) then x := d*d else x := b*b. Jika a=12, b=45, c=23, d=78, berapakah nilai x?",
+      "options": {
+        "A": "2022",
+        "B": "520",
+        "C": "6084",
+        "D": "6088",
+        "E": "529"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 12,
+      "text": "Ada 15 bebek berbaris, masing-masing bisa hadap kiri/kanan. Pak Dengklek menyuruh tiap bebek berbalik satu per satu dari kiri → kanan, berhenti jika ada bebek yang tadinya kiri berbalik jadi kanan. Posisi awal: Kiri, kanan, kanan, kanan, kiri, kiri, kanan, kiri, kiri, kanan, kanan, kiri, kanan, kiri, kanan. Pertanyaan: Setelah langkah ke-4, berapa banyak bebek yang pernah berubah arah?",
+      "options": {
+        "A": "1–3",
+        "B": "4–6",
+        "C": "2–9",
+        "D": "10–12",
+        "E": "13–15"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 13,
+      "text": "Aturan: Ambil 2 digit terakhir NIM = x. Jika x mod 6 = 1 → Exercise 1. Jika x mod 6 = 2 → Exercise 2. Jika x mod 6 = 3 → Exercise 3. Jika lainnya: Jika x ≥ 50 → Exercise 4. Jika x < 50 → Exercise 5. NIM: Adi = …1152, Budi = …1121, Toni = …114. Urutan soal mereka?",
+      "options": {
+        "A": "Ex 2, Ex 5, Ex 1",
+        "B": "Ex 4, Ex 1, Ex 2",
+        "C": "Ex 4, Ex 1, Ex 3",
+        "D": "Ex 1, Ex 4, Ex 5",
+        "E": "Ex 4, Ex 2, Ex 3"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 14,
+      "text": "var a, b, c: integer; begin a := 12; b := 7; c := 0; while b > 0 do begin c := c + a; b := b - 1; end; writeln(c); end. Output program adalah?",
+      "options": {
+        "A": "12",
+        "B": "7",
+        "C": "72",
+        "D": "19",
+        "E": "84"
+      },
+      "answer": "E"
+    },
+    {
+      "id": 15,
+      "text": "Bubble Sort adalah algoritma pengurutan data yang paling sederhana. Cara kerjanya adalah dengan terus-menerus membandingkan dan menukar pasangan elemen data yang berdekatan sampai seluruh data tersusun dalam urutan yang benar. Putri mengurutkan koin {500,200,1000,100,250} dengan Bubble Sort. Berapa jumlah pertukaran?",
+      "options": {
+        "A": "3",
+        "B": "8",
+        "C": "4",
+        "D": "6",
+        "E": "10"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 16,
+      "text": "Kode: A=11, B=101, C=1, D=000, E=10. Pesan: 11000101101",
+      "options": {
+        "A": "AAACDb",
+        "B": "CCDEAAc",
+        "C": "ADEACd",
+        "D": "ADBBB",
+        "E": "CCDECCA"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 17,
+      "text": "function test(n){ if (n <= 2) return n; else return n + test(n-2); } Nilai test(10) adalah …",
+      "options": {
+        "A": "9",
+        "B": "15",
+        "C": "25",
+        "D": "30",
+        "E": "35"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 18,
+      "text": "Runa memiliki huruf-huruf khusus: A, B, dan C. A berubah jadi BB, B berubah jadi AC, C berubah jadi A. Jika awal untaian adalah ACA, berapa banyak huruf setelah transformasi 4 kali?",
+      "options": {
+        "A": "60",
+        "B": "28",
+        "C": "30",
+        "D": "16",
+        "E": "5"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 19,
+      "text": "Uci dan Azmi berbelanja. Harga celana = Rp35.000, kaos = Rp25.000. Maksimal beli 10 item per jenis per orang. Uang total = Rp1.000.000. Dijual kembali: celana = Rp40.000 (untung Rp5.000), kaos = Rp45.000 (untung Rp20.000). Berapa keuntungan maksimal?",
+      "options": {
+        "A": "400.000",
+        "B": "470.000",
+        "C": "500.000",
+        "D": "520.000",
+        "E": "600.000"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 20,
+      "text": "Seorang arkeolog punya tas kapasitas 15 kg. Patung: (3kg, 20), (10kg, 95), (8kg, 55), (7kg, 48), (6kg, 80). Patung mana yang dipilih agar nilai maksimal?",
+      "options": {
+        "A": "1 & 2",
+        "B": "3 & 4",
+        "C": "3 & 5",
+        "D": "2 saja",
+        "E": "2 & 5"
+      },
+      "answer": "C"
+    }
+  ]
+}

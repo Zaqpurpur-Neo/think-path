@@ -22,6 +22,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
+	margin-bottom: .5em;
 
 	& svg {
 		color: var(--jade)
@@ -32,27 +33,3 @@
 		font-weight: 500;
 	}
 }
-
-.desc {
-	font-size: .9em;
-	color: #676767
-}
-
-.progress {
-	display: flex;
-	flex-direction: column;
-	gap: .2em;
-	margin-top: auto;
-}
-
-.progressId {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-
-	& h3 {
-		font-size: 1.8em;
-		font-weight: 600;
-	}
-}
-

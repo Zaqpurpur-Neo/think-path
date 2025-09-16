@@ -20,7 +20,9 @@
 	border-radius: 1em;
 	display: flex;
 	flex-direction: column;
-	gap: 1.25em
+	gap: 1.25em;
+	border: 1px solid #cfcfcf;
+
 }
 
 .innerWrapper {

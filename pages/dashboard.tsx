@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import ModuleBox from "@/components/ModuleBox";
 import { Bab, ProgressStatus } from "@/generated/prisma";
 import StatusBox from "@/components/StatusBox";
+import TestBox from "@/components/TestBox";
 
 type Pages = "dashboard" | "progress";
 
@@ -42,22 +43,29 @@ function HomeSection({ modules, userId }) {
 	}
 
 	const countModuleDone = (result: (Bab & { status: ProgressStatus })[]) => {
-		for (let item of result) {
-			if(item.id === 1 && item.status === "DONE_READING") {
-				setModuleDone(prev => prev + 1);
-			} else {
-				if(item.status === "QUIZ_ATTEMPT") setModuleDone(prev => prev + 1)
+		if(moduleTotal > 1 && moduleDone <= moduleTotal) {
+			for (let item of result) {
+				if(item.id === 1 && item.status === "DONE_READING") {
+					setModuleDone(prev => prev + 1);
+				} else {
+					if(item.status === "QUIZ_ATTEMPT") setModuleDone(prev => prev + 1)
+				}
 			}
+			setModuleDone(prev => prev - 1)
 		}
-		setModuleDone(prev => prev - 1)
 	}
 
 	useEffect(() => {
 		if(modules?.result !== undefined) {
 			setModuleTotal(modules.result.length);
-			countModuleDone(modules.result)
 		}
 	}, [modules?.result])
+
+	useEffect(() => {
+		if(modules?.result !== undefined) {
+			countModuleDone(modules.result)
+		}
+	}, [moduleTotal])
 
 	return (
 		<div className={`${styles.homeSection} ${move && styles.fadeOut}`}>
@@ -71,7 +79,7 @@ function HomeSection({ modules, userId }) {
 						title="Modul Selesai" from={0} 
 						to={moduleDone} maxValue={moduleTotal} format="slice"
 						icons={CircleCheckBig} />
-
+					<TestBox />
 				</div>
 				<h1 className={styles.titleModule}>Modul Pembelajaran</h1>
 				<div className={styles.moduleSection}>
