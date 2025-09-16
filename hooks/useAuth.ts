@@ -19,6 +19,6 @@ export default function useAuth(redirectTo: string = "/login") {
 
 	return { authenticated, loading, logout: () => {
 		clearToken();
-		router.push(redirectTo);
+		router.replace(redirectTo);
 	}}
 }

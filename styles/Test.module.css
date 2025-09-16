@@ -1,0 +1,162 @@
+.testRoot {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.contentWrapper {
+	position: relative;
+	max-width: 60em;
+	margin: 0 auto;
+	margin-bottom: 4em;
+	margin-top: 1em;
+	display: flex;
+	flex-direction: column;
+	gap: 1.25em;
+}
+
+.innerWrapper {
+	background: #fff;
+	padding: 2.25em;
+	border-radius: 1em;
+	display: flex;
+	flex-direction: column;
+	gap: 1.25em;
+	border: 1px solid #cfcfcf;
+}
+
+.topper {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
+	margin-bottom: 2em;
+}
+
+.topperBack {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 1em;
+	padding: .75em 1.25em;
+	width: fit-content;
+	border-radius: .6em;
+	cursor: pointer;
+	animation: fade-in .4s ease;
+	animation-fill-mode: both;
+
+	&:hover {
+		background: #dfdfdf;
+	}
+}
+
+.topperFlex {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 1.25em 0;
+	margin-bottom: 1em;
+}
+
+.progress {
+	display: flex;
+	flex-direction: column;
+	gap: .75em;
+	margin-top: auto;
+}
+
+.progressId {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	& p {
+		font-size: 1.2em;
+	}
+}
+
+.top {
+	display: flex;
+	align-items: center;
+	gap: .5em
+}
+
+.question {
+	font-size: 1.25em;
+}
+
+.options {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}
+
+.optionsItem {
+	position: relative;
+	display: flex;
+	gap: .5em;
+	align-items: center;
+	font-size: 1.25em;
+}
+
+.navigation {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.numNav {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	gap: .2em;
+}
+
+.numNavItem {
+	position: relative;
+	width: 2em;
+	aspect-ratio: 1/1;
+	font-size: 1.25em;
+	border-radius: 20px;
+	border: 1px solid #9f9f9f;
+	cursor: pointer;
+	background: #fff;
+	color: #4f4f4f;
+
+	&:hover {
+		background: #efefef;
+	}
+}
+
+.numNavItemSelected {
+	background: var(--jade);
+	color: var(--midnight-green);
+	border: 1px solid var(--rich-black);
+
+	&:hover {
+		background: var(--jade);
+	}
+}
+
+.imageQuiz {
+	max-width: 27em;
+}
+
+.imageAnswer {
+	max-width: 24em;
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+		transform: translateY(2em);
+	} to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

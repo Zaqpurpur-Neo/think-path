@@ -1,7 +1,7 @@
 {
   "questions": [
     {
-      "id": "1",
+      "id": 1,
       "text": "Budi memiliki setumpuk panekuk di piring A (besar di bawah, kecil di atas). Ia ingin memindahkan semuanya ke piring C menggunakan piring bantu B. Hanya satu panekuk per langkah dan tidak boleh panekuk besar di atas yang kecil. Berapa langkah minimum untuk 5 panekuk?",
       "property": [],
       "options": {
@@ -17,7 +17,7 @@
       "ai_context": null
     },
     {
-      "id": "2",
+      "id": 2,
       "text": "Berapa luas bangun gabungan: persegi panjang 4×3 menempel pada segitiga siku-siku beralas 2 dan tinggi 3?",
       "property": ["image-question"],
       "options": {
@@ -39,7 +39,7 @@
       }
     },
     {
-      "id": "3",
+      "id": 3,
       "text": "Diberikan tabel bilangan (7 kolom × 7 baris). Berapakah bilangan terbesar dari tabel tersebut?",
       "property": ["table"],
       "options": {
@@ -66,7 +66,7 @@
       "ai_context": null
     },
     {
-      "id": "4",
+      "id": 4,
       "text": "Ada 4 toples dengan jumlah permen awal sama. Setelah diambil: Toples1 ambil 3 sisa 2; Toples2 ambil 5 sisa 3; Toples3 ambil 7 sisa 2; Toples4 ambil 9 sisa ?. Berapa sisa permen pada Toples4?",
       "property": [],
       "options": {
@@ -92,7 +92,7 @@
       }
     },
     {
-      "id": "5",
+      "id": 5,
       "text": "PT. SMJ harus mengirim 53.000 L air. Pilih kombinasi truk paling sedikit: A=1.000L, B=2.000L, C=4.000L, D=8.000L, F=16.000L, E=32.000L.",
       "property": [],
       "options": {

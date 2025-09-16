@@ -34,7 +34,7 @@ export default function Login() {
 			setIsSubmitted(false)
 		} else {
 			localStorage.setItem("token", data.token);
-			router.push("/dashboard")
+			window.location.href = "/dashboard"
 		}
 	}
 

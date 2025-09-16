@@ -23,6 +23,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 			if (!quiz) return res.status(404).json({ error: "Quiz not found" });
 
 			const isCorrect = quiz.answer === answer;
+			console.log("[LOG]:", quizId - 1, quiz.answer, answer)
 
 			const attempt = await prisma.quizAttempt.upsert({
 				where: {

@@ -16,7 +16,7 @@ import TestBox from "@/components/TestBox";
 
 type Pages = "dashboard" | "progress";
 
-async function loadModule(userCtx: UserContextType) {
+export async function loadModule(userCtx: UserContextType) {
 	if(userCtx.loading) return;	
 	
 	const res = await axim("/api/module-preview").post({
@@ -29,6 +29,7 @@ async function loadModule(userCtx: UserContextType) {
 function HomeSection({ modules, userId, move, setMove }) {
 	const [moduleTotal, setModuleTotal] = useState(1);
 	const [moduleDone, setModuleDone] = useState(1);
+	const [loading, setLoading] = useState(false)
 
 	const handleOpenend = async (postId: number) => {
 		if(userId !== undefined || userId !== null) {
@@ -41,33 +42,44 @@ function HomeSection({ modules, userId, move, setMove }) {
 		}
 	}
 
-	const countModuleDone = (result: (Bab & { status: ProgressStatus })[]) => {
+	const countModuleDone = (result: (Bab & { status: ProgressStatus })[]): number => {
+		let count = 0;
 		if(moduleTotal > 1 && moduleDone <= moduleTotal) {
 			for (let item of result) {
 				if(item.id === 1 && item.status === "DONE_READING") {
-					setModuleDone(prev => prev + 1);
+					count += 1;
 				} else {
-					if(item.status === "QUIZ_ATTEMPT") setModuleDone(prev => prev + 1)
+					if(item.status === "QUIZ_ATTEMPT") {
+						count += 1;
+					}
 				}
 			}
 
-			setModuleDone(prev => prev - 1)
 		}
+
+		return count;
 	}
 
 	useEffect(() => {
+		setLoading(true)
 		if(modules?.result !== undefined) {
 			setModuleTotal(modules.result.length);
+		}
+
+		if(moduleTotal > 1) {
+			setLoading(false)
 		}
 	}, [modules?.result])
 
 	useEffect(() => {
 		if(modules?.result !== undefined) {
-			countModuleDone(modules.result)
+			const res = countModuleDone(modules.result)
+			setModuleDone(res);
 		}
+		setLoading(false)
 	}, [moduleTotal])
 
-	return moduleTotal > 1 && (
+	return !loading && (
 		<div className={`${styles.homeSection} ${move && styles.fadeOut}`}>
 			<div className={styles.homeInner}>
 				<div className={styles.moduleSectionTop}>
@@ -79,7 +91,7 @@ function HomeSection({ modules, userId, move, setMove }) {
 						title="Modul Selesai" from={0} 
 						to={moduleDone} maxValue={moduleTotal} format="slice"
 						icons={CircleCheckBig} />
-					<TestBox />
+					<TestBox isUnlock={moduleDone === moduleTotal} />
 				</div>
 				<h1 className={styles.titleModule}>Modul Pembelajaran</h1>
 				<div className={styles.moduleSection}>

@@ -3,74 +3,59 @@
     {
       "id": 1,
       "text": "Dona menimbang:\nNero + Champagne = 18 kg\nChampagne + Magnum = 26 kg\nNero + Magnum = 20 kg\nTimbangan rusak saat ingin menimbang ketiganya.\n\nTentukan: Berat total ketiga kucing bersama-sama.",
-      "property": [],
       "options": {
         "A": "28 kg",
         "B": "30 kg",
         "C": "32 kg",
         "D": "36 kg"
       },
-      "answer": "C",
-      "image": null,
-      "ai_context": null
+      "answer": "C"
     },
     {
       "id": 2,
       "text": "Agria, Bogoria, Pertania membuat:\n3 bakso biasa\n3 bakso spesial\n2 bakso nuklir\n\nAgria: biasa = 1 menit, spesial = 2 menit, nuklir = 5 menit\nBogoria: biasa = 2 menit, spesial = 2 menit, nuklir = 3 menit\nPertania: nuklir = 2 menit\n\nBerapa waktu minimal agar semua selesai?",
-      "property": [],
       "options": {
         "A": "4 menit",
         "B": "5 menit",
         "C": "6 menit",
         "D": "7 menit"
       },
-      "answer": "B",
-      "image": null,
-      "ai_context": null
+      "answer": "B"
     },
     {
       "id": 3,
       "text": "Ada 6 regu dengan anggota: 5, 7, 6, 7, 8, 10 orang.\nBerapa minimal siswa yang harus diundang agar setiap regu pasti diwakili 1 orang?",
-      "property": [],
       "options": {
         "A": "36",
         "B": "37",
         "C": "38",
         "D": "39"
       },
-      "answer": "D",
-      "image": null,
-      "ai_context": null
+      "answer": "D"
     },
     {
       "id": 4,
       "text": "Arabot memiliki tiga titik awal: A, B, atau C. Tujuannya adalah stasiun pengisian (ikon petir merah).Aturan: Arabot tidak boleh mampir ke titik awal lain selain titik awalnya sendiri.\nBeberapa label L/R hilang (kotak 1–6). Tentukan urutan label agar Arabot selalu sampai ke stasiun pengisian.",
-      "property": ["image-question"],
       "options": {
         "A": "L, L, R, R, L, R",
         "B": "R, L, L, R, R, R",
         "C": "L, R, R, L, R, R",
         "D": "R, R, L, L, R, L"
       },
-      "answer": "C",
-	  "image": "/images/soal/modul4no4.png",
-      "image_description": "Dari B dan C: jalur terpisah lalu bertemu di persimpangan (kotak 1 dan 2), kemudian bergabung.\n- Dari A: langsung menuju persimpangan utama.\n- Persimpangan utama: bertemu jalur A, B, dan C. Ada percabangan L (kiri) dan R (kanan), melewati kotak 3, 4, 5, 6.\n- Semua jalur menuju stasiun pengisian (titik merah)",
-      "ai_context": null
+	  "image": null,
+	  "image-description": " Dari B dan C: jalur terpisah lalu bertemu di persimpangan (kotak 1 dan 2), kemudian bergabung.\n- Dari A: langsung menuju persimpangan utama.\n- Persimpangan utama: bertemu jalur A, B, dan C. Ada percabangan L (kiri) dan R (kanan), melewati kotak 3, 4, 5, 6.\n- Semua jalur menuju stasiun pengisian (titik merah)",
+      "answer": "C"
     },
     {
       "id": 5,
       "text": "Ada tujuh siswa yang gemar membaca dan membentuk sebuah klub. Jika ada satu buku baru diperoleh (dan dibaca) seorang siswa, maka ia akan meneruskan meminjamkan ke anggota klub lainnya dengan aturan:\n- Seorang siswa hanya meminjamkan buku ke sahabat yang belum pernah meminjam buku itu.\n- Jika ia punya beberapa sahabat yang belum membaca, maka ia akan meminjamkan terlebih dahulu ke sahabat paling muda di antara mereka.\n- Jika semua sahabatnya sudah pernah meminjam, maka ia akan mengembalikan buku ke siswa yang sebelumnya meminjamkannya kepadanya.\n\nBen selesai membaca sebuah buku baru dan memulai proses peminjaman (selain Ben, belum ada yang membaca).\nSiapa yang menjadi pembaca terakhir dari buku tersebut?",
-      "property": [],
       "options": {
         "A": "Bill",
         "B": "Sara",
         "C": "Tom",
         "D": "Kim"
       },
-      "answer": "D",
-      "image": null,
-      "ai_context": null
+      "answer": "D"
     }
   ]
 }
-

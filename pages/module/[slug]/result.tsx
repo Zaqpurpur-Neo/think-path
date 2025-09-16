@@ -73,6 +73,8 @@ function ItemComponent({ results, item, idx }: { results: QuizAttempt[], item: Q
 					color: res.isCorrect ? "var(--color-green-600)" : "var(--color-red-500)"
 				}}>{item?.text}</p>
 
+				{JSON.stringify(res.isCorrect)}
+
 				{res.isCorrect ? 
 					<CircleCheck style={{ color: "var(--color-green-600)" }} /> : 
 					<CircleX style={{ color: "var(--color-red-600)" }} />

@@ -1,4 +1,4 @@
-import { Lock, ScrollText } from "lucide-react";
+import { CirclePlay, Lock, ScrollText } from "lucide-react";
 import styles from "./TestBox.module.css";
 import Button from "../Button";
 import { useRouter } from "next/router";
@@ -19,7 +19,7 @@ export default function TestBox({
 
 			<Button 
 				onClick={() => {
-					if(isUnlock) router.push("/test-result")
+					if(isUnlock) router.push("/test")
 				}}
 				outline={!isUnlock} 
 				disabled={!isUnlock}>

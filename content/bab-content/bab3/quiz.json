@@ -1,7 +1,7 @@
 {
   "questions": [
     {
-      "id": "1",
+      "id": 1,
       "text": "Lima kartu 16,8,4,2,1 hati. Kode 1 jika kartu terbuka, 0 jika tertutup. Contoh nilai 9 = 01001. Temukan kode untuk nilai 19.",
       "property": ["image-question"],
       "options": {
@@ -23,7 +23,7 @@
       }
     },
     {
-      "id": "2",
+      "id": 2,
       "text": "Kode berang-berang (L/R dari pintu masuk). Contoh A=LL, BAR=LRLLLR. Berapa banyak huruf pada kode untuk kata BEAR?",
       "property": ["image-question"],
       "options": {
@@ -47,7 +47,7 @@
       }
     },
     {
-      "id": "3",
+      "id": 3,
       "text": "Strategi pencarian impostor: tiap rapat, bagi dua kelompok seimbang; kelompok tanpa impostor bebas, sisanya lanjut. Paling banyak berapa kali rapat untuk menemukan 1 impostor (contoh 12 pemain)?",
       "property": ["image-question"],
       "options": {
@@ -65,7 +65,7 @@
       }
     },
     {
-      "id": "4",
+      "id": 4,
       "text": "Mesin hitung dengan tombol +2, -2, ×2, ÷2. Dari 0, minimal berapa penekanan tombol untuk mencapai 2020?",
       "property": [],
       "options": {
@@ -97,7 +97,7 @@
       }
     },
     {
-      "id": "5",
+      "id": 5,
       "text": "Lomba marathon melalui pos A,B,C,D,E masing-masing sekali, start A finish E. Rute mana yang berjarak terpendek?",
       "property": ["image-question"],
       "options": {

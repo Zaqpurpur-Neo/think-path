@@ -158,6 +158,7 @@ export default function Quiz() {
 					<div className={styles.options}>
 						<RadioGroup value={currentAnswer} onValueChange={handleChange}>
 							{currentQuiz && Object.entries(currentQuiz.options).map(item => {
+								console.log(item[0])
 								return <div key={item[0]} className={styles.optionsItem}>
 									<RadioGroupItem id={"id-" + item[0]} value={`${item[0]}`} />
 									<Label htmlFor={"id-" + item[0]}>{
