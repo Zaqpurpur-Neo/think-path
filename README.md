@@ -48,7 +48,7 @@ Untuk menggunakan layanan OpenRouter, Anda perlu memiliki API Key. Berikut langk
    Buka [https://openrouter.ai/](https://openrouter.ai/) dan buat akun baru, atau login jika sudah memiliki akun.
 
 2. **Akses halaman API Keys**  
-   Setelah login, buka menu **Dashboard** → pilih **API Keys**.
+   Setelah login, buka menu pada menu di kanan atas pada icon akun anda, kemudian pilih menu keys.
 
 3. **Buat API Key baru**  
    Klik tombol **Create Key**, lalu beri nama sesuai kebutuhan (misalnya: `ThinkPath Development`).
