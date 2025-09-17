@@ -71,6 +71,11 @@ Untuk menggunakan layanan OpenRouter, Anda perlu memiliki API Key. Berikut langk
     ```bash
     cp .env.example .env
     ```
+   atau 
+   ```batch
+   copy .env.example .env
+   ```
+   atau rename secara manual menjadi .env
 
 2. Edit file `.env` dan sesuaikan nilai variabel lingkungan berikut:
 
