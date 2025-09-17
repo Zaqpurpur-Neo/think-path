@@ -9,7 +9,7 @@ import styles from "@/styles/Module.module.css"
 import Button from "@/components/Button";
 import useAuth from "@/hooks/useAuth";
 import { useUser } from "@/context/UserContext";
-import { Bab, ProgressStatus } from "@/generated/prisma";
+import { Bab, ProgressStatus } from "@/node_modules/generated/prisma";
 import { axim } from "@/lib/axim";
 import { usePathname } from "next/navigation";
 

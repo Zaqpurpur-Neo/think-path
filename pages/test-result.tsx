@@ -17,7 +17,7 @@ import {
 import Navbar from "@/components/Navbar";
 import { axim } from "@/lib/axim";
 import { Question } from "@/types";
-import { QuizAttempt, TestAttempt } from "@/generated/prisma";
+import { QuizAttempt, TestAttempt } from "@/node_modules/generated/prisma";
 import { QuestionTable } from "@/components/QuestionTable";
 import { RadioGroup, RadioGroupItem } from "@/components/Radio";
 import { Label } from "@/components/Label";

@@ -19,7 +19,7 @@ import Navbar from "@/components/Navbar";
 import { usePathname } from "next/navigation";
 import { axim } from "@/lib/axim";
 import { Question } from "@/types";
-import { QuizAttempt } from "@/generated/prisma";
+import { QuizAttempt } from "@/node_modules/generated/prisma";
 import { QuestionTable } from "@/components/QuestionTable";
 import { RadioGroup, RadioGroupItem } from "@/components/Radio";
 import { Label } from "@/components/Label";

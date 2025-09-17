@@ -6,7 +6,7 @@ import { ArrowLeft, BookOpen, CircleQuestionMark, Trophy } from "lucide-react";
 import { useRouter } from "next/router";
 import { memo, useCallback, useEffect, useReducer, useState } from "react";
 import { loadModule } from "./dashboard";
-import { Bab, ProgressStatus } from "@/generated/prisma";
+import { Bab, ProgressStatus } from "@/node_modules/generated/prisma";
 import { usePathname } from "next/navigation";
 import { RadioGroup, RadioGroupItem } from "@/components/Radio";
 import { Label } from "@radix-ui/react-label";

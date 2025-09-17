@@ -1,6 +1,6 @@
 import { Book, BookOpen, BookOpenCheck, CircleCheckBig, Pencil, PencilRuler } from "lucide-react";
 import styles from "./ModuleBox.module.css";
-import { ProgressStatus } from "@/generated/prisma";
+import { ProgressStatus } from "@/node_modules/generated/prisma";
 import { Progress } from "../Progress";
 import { useEffect, useState } from "react";
 import Button from "../Button";

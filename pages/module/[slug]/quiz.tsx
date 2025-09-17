@@ -5,7 +5,7 @@ import { Progress } from "@/components/Progress";
 import { QuestionTable } from "@/components/QuestionTable";
 import { RadioGroup, RadioGroupItem } from "@/components/Radio";
 import { useUser } from "@/context/UserContext";
-import { ProgressStatus } from "@/generated/prisma";
+import { ProgressStatus } from "@/node_modules/generated/prisma";
 import useAuth from "@/hooks/useAuth";
 import { axim } from "@/lib/axim";
 import styles from "@/styles/Quiz.module.css"

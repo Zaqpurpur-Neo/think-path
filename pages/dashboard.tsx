@@ -10,7 +10,7 @@ import { UserContextType } from "@/types";
 import { BookOpen, BookType, CircleCheckBig, Trophy } from "lucide-react";
 import { useEffect, useState } from "react";
 import ModuleBox from "@/components/ModuleBox";
-import { Bab, ProgressStatus } from "@/generated/prisma";
+import { Bab, ProgressStatus } from "@/node_modules/generated/prisma";
 import StatusBox from "@/components/StatusBox";
 import TestBox from "@/components/TestBox";
 import ListTable from "@/components/ListTable";
