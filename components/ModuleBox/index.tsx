@@ -54,7 +54,7 @@ function ProgresButton({ number, progres, ...props }) {
 	}
 }
 
-export default function ModuleBox({ data, onClick }: { data: Data }) {
+export default function ModuleBox({ data, onClick, noAction = false, miniText = "" }: { data: Data }) {
 	let arg: ProgressStatus[] = [] 
 	if(data.id > 1) arg = ["NOT_OPENED", "OPENED", "DONE_READING", "QUIZ_ATTEMPT"];
 	else arg = ["NOT_OPENED", "OPENED", "DONE_READING"];
@@ -75,13 +75,18 @@ export default function ModuleBox({ data, onClick }: { data: Data }) {
 	}
 
 	return (
-		<div className={styles.boxRoot}>
+		<div style={noAction ? {
+			maxWidth: 100 + "%"
+		} : {}} className={styles.boxRoot}>
 			<div className={styles.topper}>
 				<h2>{data.title.split(":")[1].trim()}</h2>
-				{ data.status === "QUIZ_ATTEMPT" ? <CircleCheckBig /> : <PencilRuler /> }
+				{ !noAction && (data.status === "QUIZ_ATTEMPT" ? <CircleCheckBig /> : <PencilRuler />) }
+				{ noAction && percentage <= 0 && <p className={styles.miniBadge}>Belum Mulai</p> }
+				{ noAction && (percentage > 0 && percentage < 100) && <p className={styles.miniBadge}>Progress</p> }
+				{ noAction && percentage >= 100 && <p className={styles.miniBadge}>Selesai</p> }
 			</div>
 			<div className={styles.desc}>
-				<p>{data.synopsis}</p>
+				{!noAction && <p>{data.synopsis}</p>}
 			</div>
 
 			<div className={styles.progress}>
@@ -97,12 +102,14 @@ export default function ModuleBox({ data, onClick }: { data: Data }) {
 					</p>
 				</div>
 				<Progress delay={200} value={percentage} />
+				<p>{miniText}</p>
 			</div>
 
-			<ProgresButton
+			{!noAction && <ProgresButton
 				number={data.id}
 				progres={data.status} 
 				onClick={handleClick}/>
+			}
 		</div>
 	)
 }

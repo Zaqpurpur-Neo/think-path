@@ -209,6 +209,9 @@
   border-radius: 16px;
   background: #fff;
   overflow: hidden;
+  animation: fade-in .5s ease;
+  animation-fill-mode: both;
+  animation-delay: .7s;
 }
 .chatTitle {
   display: flex;
@@ -236,7 +239,17 @@
 .bubbleUser { margin-left: auto; background: #f3f4f6; }
 .bubbleAssistant { margin-right: auto; background: #eff6ff; }
 .bubbleMeta { font-size: 0.7rem; color: #6b7280; margin-bottom: 4px; }
-.bubbleText { font-size: 0.95rem; }
+.bubbleText { 
+	font-size: 0.95rem; 
+
+	& ol {
+		margin-left: 1em;
+	}
+
+	& ul {
+		margin-left: 1em
+	}
+}
 .chatForm {
   display: flex; gap: 8px; padding: 10px;
   border-top: 1px solid #f1f5f9; background: #fff;
@@ -250,7 +263,7 @@
 }
 .chatSendBtn {
   display: inline-flex; align-items: center; justify-content: center;
-  padding: 0 14px; border-radius: 12px; border: none; background: #2563eb; color: #fff;
+  padding: 0 14px; border-radius: 12px; border: none; background: var(--jade); cursor: pointer; color: #fff;
 }
 .chatSendBtn:disabled { opacity: .6; cursor: not-allowed; }
 .pulse { animation: pulse 1.6s ease-in-out infinite; }

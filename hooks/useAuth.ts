@@ -19,6 +19,9 @@ export default function useAuth(redirectTo: string = "/login") {
 
 	return { authenticated, loading, logout: () => {
 		clearToken();
+		localStorage.removeItem("quizResult");
+		for (let i = 2; i <= 5; i++) localStorage.removeItem(`quizResult_bab${i}`);
+		localStorage.removeItem("testResult");
 		router.replace(redirectTo);
 	}}
 }

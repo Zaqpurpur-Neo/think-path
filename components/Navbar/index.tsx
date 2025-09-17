@@ -1,6 +1,7 @@
 import { LogOut } from "lucide-react";
 import styles from "./Navbar.module.css";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 function objToArray(obj = {}) {
 	const array = []
@@ -16,7 +17,7 @@ export default function Navbar({ pages, user, selectedPage, setSelectedPage, onL
 
 	return (
 		<div className={`${styles.navbar} ${isSlideOut && styles.slideOut}`}>
-			<h1 className={styles.title}>ThinkPath</h1>
+			<h1 className={styles.title}><Link href="/">ThinkPath</Link></h1>
 			<ul>
 				{pageser.map((item, idx) => {
 					return <li 

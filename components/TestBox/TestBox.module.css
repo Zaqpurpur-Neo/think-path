@@ -33,3 +33,13 @@
 		font-weight: 500;
 	}
 }
+
+.flex {
+	width: 100%;
+	display: flex;
+	gap: .5em;
+
+	& * {
+		width: 100%;
+	}
+}

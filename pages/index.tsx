@@ -1,9 +1,15 @@
-'use client'
-
 import { useState, useEffect } from 'react'
 import styles from '@/styles/LandingPage.module.css'
+import { ArrowUp, ArrowUpRight, BookCopy, Brain, Hourglass, LayoutPanelLeft, NotebookPen, Puzzle, Target, Zap, ZoomIn } from 'lucide-react'
+import { useUser } from '@/context/UserContext';
+import Link from 'next/link';
+import Button from '@/components/Button';
+import { useRouter } from 'next/router';
 
 export default function LandingPage() {
+  const user = useUser();
+  const router = useRouter();
+
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isLoaded, setIsLoaded] = useState(false)
   const [scrollY, setScrollY] = useState(0)
@@ -32,32 +38,46 @@ export default function LandingPage() {
     {
       title: "Dekomposisi",
       description: "Memecah masalah kompleks menjadi bagian-bagian yang lebih sederhana dan mudah dipahami",
-      icon: "🧩"
+      icon: Puzzle
     },
     {
       title: "Pengenalan Pola", 
       description: "Mengidentifikasi pola dan kesamaan dalam berbagai situasi untuk menemukan solusi",
-      icon: "🔍"
+      icon: ZoomIn
     },
     {
       title: "Abstraksi",
       description: "Fokus pada hal-hal penting sambil mengabaikan detail yang tidak relevan",
-      icon: "🎯"
+      icon: Target
     },
     {
       title: "Algoritma",
       description: "Membuat langkah-langkah sistematis dan terstruktur untuk menyelesaikan masalah",
-      icon: "⚡"
+      icon: Zap
     }
   ]
 
-  
-
   const stats = [
-    { number: "Artificial Intelegent", label: "Artificial Intelegent untuk membantu anda lebih mudah mempelajari computational thinking" },
-    { number: "Modul ", label: "Modul 4 pilar computational thinking yang disertai gambar agar kamu mudah paham" },
-    { number: "Kuis", label: "Kuis-kuis di akhir modul dan kuis keseluruhan materi" },
-    { number: "Coming Soon", label: "Akses Pembelajaran" }
+    { 
+		number: "Artificial Intelegent", 
+		label: "Artificial Intelegent untuk membantu anda lebih mudah mempelajari computational thinking",
+		icon: Brain
+	},
+    { 
+		number: "Modul ", 
+		label: "Modul 4 pilar computational thinking yang disertai gambar agar kamu mudah paham",
+		icon: BookCopy
+	},
+    { 
+		number: "Kuis", 
+		label: "Kuis-kuis di akhir modul dan kuis keseluruhan materi",
+		icon: NotebookPen
+	},
+    { 
+		number: "Coming Soon", 
+		label: "Akses Pembelajaran",
+		icon: Hourglass
+	}
   ]
 
   return (
@@ -100,8 +120,16 @@ export default function LandingPage() {
             <span className={styles.logoText}>ThinkPath</span>
           </div>
           <ul className={styles.navList}>
-            <li><a href="/login" className={styles.navLink}>Log in</a></li>
-            <li><a href="/register" className={styles.navLink}>Sign in</a></li>
+		  	{(user.user === null || user.user === undefined) ? (
+			<>
+		  		<li><Link href="/login" className={styles.navLink}>Log in</Link></li>
+            	<li><Link href="/register" className={styles.navLink}>Sign in</Link></li>
+			</>
+			): (
+			<>
+				<li><Button onClick={() => router.push("/dashboard")}><LayoutPanelLeft /> Go To Dashboard</Button></li>
+			</>
+			)}
           </ul>
           <button className={styles.menuToggle}>
             <span></span>
@@ -193,10 +221,8 @@ export default function LandingPage() {
               {/* Floating Elements */}
               <div className={styles.floatingElements}>
                 <div className={styles.floatingElement} style={{ top: '60%', left: '-10%' }}>
-                  <span>💡</span>
                 </div>
                 <div className={styles.floatingElement} style={{ top: '80%', left: '85%' }}>
-                  <span>🎯</span>
                 </div>
               </div>
             </div>
@@ -230,7 +256,7 @@ export default function LandingPage() {
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <div className={styles.cardNumber}>{String(index + 1).padStart(2, '0')}</div>
-                <div className={styles.featureIcon}>{feature.icon}</div>
+                <div className={styles.featureIcon}><feature.icon /></div>
                 <h3 className={styles.featureTitle}>{feature.title}</h3>
                 <p className={styles.featureDescription}>{feature.description}</p>
                 <div className={styles.cardGlow}></div>
@@ -249,12 +275,26 @@ export default function LandingPage() {
       {/* Statistics Section */}
       <section className={styles.stats}>
         <div className={styles.sectionContainer}>
+		  <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitleMiddle}>
+				Fitur Kami
+            </h2>
+            <p className={styles.sectionSubtitle}>
+              Fitur Cerdas untuk Mempermudah Pembelajaran Anda
+            </p>
+          </div>
+
           <div className={styles.statsGrid}>
             {stats.map((stat, index) => (
               <div key={index} className={styles.statItem}>
-                <div className={styles.statNumber}>{stat.number}</div>
-                <div className={styles.statLabel}>{stat.label}</div>
-                <div className={styles.statLine}></div>
+			  	<div className={styles.statTopperFlex}>
+					<stat.icon />
+					<ArrowUpRight />
+				</div>
+			  	<div className={styles.statBottomFlex}>
+					<div className={styles.statNumber}>{stat.number}</div>
+					<div className={styles.statLabel}>{stat.label}</div>
+				</div>
               </div>
             ))}
           </div>
@@ -266,7 +306,7 @@ export default function LandingPage() {
         <div className={styles.sectionContainer}>
           <div className={styles.ctaContent}>
             <h2 className={styles.ctaTitle}>
-              Siap Memulai Perjalanan <span className={styles.accent}>Pembelajaran</span> Anda?
+              Siap Memulai Perjalanan Pembelajaran Anda?
             </h2>
             <p className={styles.ctaDescription}>
               Bergabunglah dengan ribuan siswa dan mulai kembangkan kemampuan computational thinking Anda hari ini
@@ -290,13 +330,13 @@ export default function LandingPage() {
             <div className={styles.footerTop}>
               <div className={styles.footerBrand}>
                 <div className={styles.logo}>
-                  <div className={styles.logoIcon}>
-                    <div className={styles.logoSquare}></div>
-                    <div className={styles.logoSquare}></div>
-                    <div className={styles.logoSquare}></div>
-                    <div className={styles.logoSquare}></div>
+                  <div className={styles.logoIconFooter}>
+                    <div className={styles.logoSquareFooter}></div>
+                    <div className={styles.logoSquareFooter}></div>
+                    <div className={styles.logoSquareFooter}></div>
+                    <div className={styles.logoSquareFooter}></div>
                   </div>
-                  <span className={styles.logoText}>ThinkPath</span>
+                  <span className={styles.logoTextWhite}>ThinkPath</span>
                 </div>
                 <p className={styles.footerTagline}>
                   Mengembangkan pemikiran komputasional untuk masa depan yang lebih cerdas
@@ -318,8 +358,16 @@ export default function LandingPage() {
                 </div>
               </div>
             </div>
-            
+   		  <div className={styles.footerBottom}>
+		  	<p>@2025 Team Ambatuwin</p>
+			<button onClick={() => {
+				window.scrollTo({
+					top: 0,
+					behavior: "smooth"
+				})
+			}}><ArrowUp /></button>
           </div>
+	  	</div>
         </div>
       </footer>
     </div>

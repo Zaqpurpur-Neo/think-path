@@ -23,6 +23,9 @@
 	flex-direction: column;
 	gap: 1.25em;
 	border: 1px solid #cfcfcf;
+  	animation: fade-in .5s ease;
+  	animation-fill-mode: both;
+  	animation-delay: .5s;
 }
 
 .topper {
@@ -98,7 +101,7 @@
 	position: relative;
 	display: flex;
 	gap: .5em;
-	align-items: center;
+	align-items: flex-start;
 	font-size: 1.25em;
 }
 

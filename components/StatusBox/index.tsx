@@ -11,7 +11,8 @@ export default function StatusBox({
 
 	const [percentage, setPercentage] = useState(0)
 	useEffect(() => {
-		setPercentage(Math.round(to/maxValue * 100))
+		if(maxValue > 0) setPercentage(Math.round(to/maxValue * 100));
+		else setPercentage(0)
 	}, [,percentage]);
 
 	return (

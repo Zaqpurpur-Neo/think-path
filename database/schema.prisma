@@ -51,13 +51,14 @@ model QuizAttempt {
 model TestAttempt {
   id          Int      @id @default(autoincrement())
   userId      String
+  testId      Int
   isCorrect   Boolean
   answer      String?
   attemptedAt DateTime @default(now())
 
   user User @relation(fields: [userId], references: [id])
 
-  @@unique([userId])
+  @@unique([userId, testId])
 }
 
 /**
@@ -77,4 +78,6 @@ model Progress {
   status ProgressStatus @default(NOT_OPENED)
   user   User           @relation(fields: [userId], references: [id])
   bab    Bab?           @relation(fields: [babId], references: [id])
+
+  @@unique([userId, babId])
 }

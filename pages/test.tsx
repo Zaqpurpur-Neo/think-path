@@ -13,6 +13,7 @@ import { Label } from "@radix-ui/react-label";
 import { axim } from "@/lib/axim";
 import { Question } from "@/types";
 import Button from "@/components/Button";
+import test from "node:test";
 
 function answersReducer(state, action) {
 	if (state[action.id] === action.value) return state // no change → no re-render 
@@ -21,7 +22,6 @@ function answersReducer(state, action) {
 
 const BoxQuestion = memo(function BoxQuestion({ item, onAnswer, initial }) {
 	// value={answer} onValueChange={(value) => onAnswer(value, item.id)
-	console.log("rendering q", item.id)
 	const [answer, setAnswer] = useState(initial ?? "");
 	const handleChange = (value) => {
 		setAnswer(value)
@@ -135,6 +135,26 @@ export default function Test({}) {
   	const handleAnswer = useCallback((id, value) => {
 		dispatch({ id, value })
 	}, [])
+
+	const isDone = Object.values(answers).length >= Object.values(tests).length
+
+	const handleSubmit = async () => {
+		const token = localStorage.getItem("token")
+
+		const attempts = await Promise.all(Object.entries(answers).map(async (item) => {
+			const res = await axim("/api/attempt-test", { Authorization: `Bearer ${token}` }).post({	
+			// console.log({
+			// return ({
+				testId: parseInt(item[0]),
+				answer: item[1]
+			})
+			return await res.json()
+		}))
+
+		const resulted = JSON.stringify(attempts.map(i => i?.attempt));
+		localStorage.setItem("testResult", resulted)
+		router.push(`/test-result`)
+	}
 	
 	return (userCtx.loading && loading) ? "loading" : (
 		<div className={styles.testRoot}>
@@ -163,11 +183,14 @@ export default function Test({}) {
 				})}
 				<div>
 
-				{JSON.stringify(answers)}
-				{(Object.values(answers).includes(null)) ? 
-					<Button disabled={true}>Selesai</Button> :
-					<Button onClick={() => console.log(answers)} >Selesai</Button>
-				}
+					<Button 
+						disabled={!isDone} 
+						onClick={() => { 
+							if(!isDone) return;
+							handleSubmit();
+						}}>
+						Selesai
+					</Button>
 				</div>
 			</div>
 		}		

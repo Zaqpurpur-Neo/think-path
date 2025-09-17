@@ -86,7 +86,7 @@ export default function Quiz() {
 		}))
 
 		const resulted = JSON.stringify(attempts.map(i => i?.attempt));
-		localStorage.setItem("quizResult", resulted)
+		localStorage.setItem(`quizResult_${slug}`, resulted)
 		router.push(`/module/${slug}/result`)
 	}
 
@@ -158,7 +158,6 @@ export default function Quiz() {
 					<div className={styles.options}>
 						<RadioGroup value={currentAnswer} onValueChange={handleChange}>
 							{currentQuiz && Object.entries(currentQuiz.options).map(item => {
-								console.log(item[0])
 								return <div key={item[0]} className={styles.optionsItem}>
 									<RadioGroupItem id={"id-" + item[0]} value={`${item[0]}`} />
 									<Label htmlFor={"id-" + item[0]}>{

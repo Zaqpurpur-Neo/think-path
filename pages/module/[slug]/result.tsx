@@ -424,7 +424,7 @@ export default function ResultPage() {
   const [quizTitle, setQuizTitle] = useState<string | undefined>(undefined);
 
   useEffect(() => {
-    const stored = localStorage.getItem("quizResult");
+    const stored = localStorage.getItem(`quizResult_${slug}`);
     if (stored) setResults(JSON.parse(stored));
   }, []);
 
