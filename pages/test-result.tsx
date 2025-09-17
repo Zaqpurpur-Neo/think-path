@@ -44,7 +44,7 @@ function formatKeyAsLetter(
 	return idx >= 0 ? toLetter(idx) : keyStr.toUpperCase();
 }
 
-function buildQuizContextMarkdown(quiz: Question[], results: QuizAttempt[]) {
+function buildQuizContextMarkdown(quiz: Question[], results: TestAttempt[]) {
 	const lines: string[] = [];
 	lines.push("### KONTEKS KUIS");
 	lines.push(
@@ -111,7 +111,7 @@ function ChatPanel({
   correct: number;
   total: number;
   quiz: Question[];
-  results: QuizAttempt[];
+  results: TestAttempt[];
 }) {
 	const [contextMd, setContextMd] = useState<string>("");
 	const [messages, setMessages] = useState<Message[]>([
@@ -120,7 +120,7 @@ function ChatPanel({
 		content: "Kamu adalah asisten belajar Computational Thinking. Jawab ringkas, terstruktur (poin-poin), rujuk nomor soal dengan jelas, dan sertakan contoh/latihan singkat bila relevan.",
 	},
 	]);
-	const [chat, setChat] = useState<ChatMsg[]>([]); // UI messages; assistant akan di-render pakai marked.parse
+	const [chat, setChat] = useState<any[]>([]); // UI messages; assistant akan di-render pakai marked.parse
 	const [input, setInput] = useState("");
 	const [loading, setLoading] = useState(false);
 	const listRef = useRef<HTMLDivElement>(null);
@@ -264,11 +264,11 @@ function ItemComponent({
   item,
   idx,
 }: {
-  results: TestAttempt[];
-  item: Question;
-  idx: number;
+  results?: TestAttempt[];
+  item?: Question;
+  idx?: number;
 }) {
-	const res = results.filter(item => item.testId == idx)[0];
+	const res = results.filter(item => item.testId === idx)[0];
 
 	const answer = item.options[res?.answer];
 	const correctAnswer = item.options[item.answer];
@@ -297,15 +297,18 @@ function ItemComponent({
 		const reader = resp.body.getReader();
 		const decoder = new TextDecoder();
 
+		let arg = "";
 		while (true) {
 		  const { done, value } = await reader.read();
 		  if (done) break;
 		  const chunk = decoder.decode(value);
+		  arg += chunk;
 		  setText((prev) => prev + chunk);
 		}
 
-		// Sudah rapi pakai marked.parse setelah selesai stream
-		setText((prev) => marked.parse(prev));
+		const done = await marked.parse(arg);
+
+    	setText(done);
 		setLoading(false);
 	};
 
@@ -400,7 +403,7 @@ export default function TestResultPage() {
 
 	const [selectedPage, setSelectedPage] = useState<any>(null);
 
-	const [results, setResults] = useState<QuizAttempt[]>([]);
+	const [results, setResults] = useState<TestAttempt[]>([]);
 	const [test, setTest] = useState<Question[]>([]);
 	const [testTitle, setTestTitle] = useState<string | undefined>(undefined);
 
@@ -471,7 +474,7 @@ export default function TestResultPage() {
 
 		<h2 className={styles["tx-1"]}>Review Jawaban</h2>
 		{results.length > 0 && test.map((item, idx) => (
-		  <ItemComponent key={idx} results={results} item={item} idx={item.id} />
+		  <ItemComponent key={idx} results={results} item={item} idx={parseInt(item.id)} />
 		))}
 
 		<ChatPanel

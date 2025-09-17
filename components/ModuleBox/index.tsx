@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import Button from "../Button";
 import { useRouter } from "next/router";
 import CountUp from "../CountUp";
+import React from "react";
 
 type Data = {
 	id: number,
@@ -16,12 +17,13 @@ type Data = {
 }
 
 function ProgresButton({ number, progres, ...props }) {
+	const spaned = <span>Mulai</span>
 	switch(progres) {
 		case "NOT_OPENED":
 			return (
 				<Button {...props}>
 					<Book />
-					Mulai Belajar
+					<span>Mulai Belajar</span>
 				</Button>
 			);
 		case "OPENED":
@@ -54,7 +56,12 @@ function ProgresButton({ number, progres, ...props }) {
 	}
 }
 
-export default function ModuleBox({ data, onClick, noAction = false, miniText = "" }: { data: Data }) {
+export default function ModuleBox({ data, onClick, noAction = false, miniText = "" }: { 
+	data?: Data,
+	onClick?: () => void | any | never,
+	noAction?: boolean,
+	miniText?: string
+}) {
 	let arg: ProgressStatus[] = [] 
 	if(data.id > 1) arg = ["NOT_OPENED", "OPENED", "DONE_READING", "QUIZ_ATTEMPT"];
 	else arg = ["NOT_OPENED", "OPENED", "DONE_READING"];

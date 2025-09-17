@@ -2,15 +2,16 @@ import { useState } from "react"
 import styles from "./Field.module.css"
 
 type Props = {
-	type: string,
-	label: string,
-	placeholder: string,
-	named: string,
-	value: any,
-	isRequired: boolean,
-	isInvalid: boolean,
-	isForm: boolean,
-	onChange: (e: any) => any,
+	type?: string,
+	label?: string,
+	placeholder?: string,
+	named?: string,
+	value?: any,
+	isRequired?: boolean,
+	isInvalid?: boolean,
+	isForm?: boolean,
+	onChange?: (e: any) => any,
+	props?: any[]
 }
 
 export default function Field({

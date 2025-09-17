@@ -24,7 +24,7 @@ export default async function handler(
 	try {
 		if(req.method != "POST") res.status(400).end();
 
-		const {email, password, name, birthday, educationLevel}: User = req.body;
+		const {email, password, name, birthday, educationLevel}: User & { password: string } = req.body;
 
 		const existingUser = await prisma.user.findUnique({ where: { email } });
 		if(existingUser) res.status(400).json({error: "User already exitst"});

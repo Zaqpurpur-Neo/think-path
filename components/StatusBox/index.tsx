@@ -7,7 +7,9 @@ import { Progress } from "../Progress";
 export default function StatusBox({ 
 		useProgress = true, title = "", icons: Icons = Trophy, 
 		miniInfo = "", from = 0, to = 100, format = "percentage", maxValue = 100
-}: { format: "percentage" | "slice", useProgress: boolean, title: string, icons: any, miniInfo: string, from: number, to: number, maxValue: number }) {
+}: { 
+	format?: "percentage" | "slice", useProgress?: boolean, title?: string, icons?: any, miniInfo?: string, from?: number, to?: number, maxValue?: number 
+}) {
 
 	const [percentage, setPercentage] = useState(0)
 	useEffect(() => {

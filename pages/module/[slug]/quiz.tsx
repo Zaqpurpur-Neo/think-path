@@ -21,7 +21,7 @@ export default function Quiz() {
 	const { logout, loading } = useAuth();
 	const userCtx = useUser();
 	const { slug } = router.query;
-	const postId = parseInt(slug?.slice(3, slug.length))
+	const postId = parseInt(slug?.slice(3, slug.length) as string)
 
 	const [totalPage, setTotalPage] = useState(1)
 	const [currentPage, setCurrentPage] = useState(1)
@@ -181,10 +181,10 @@ export default function Quiz() {
 							 (<Button disabled={true}>
 						 		Selesai
 							 </Button>) :
-							 (<Button onClick={async () => {
+							 (<Button onClick={async (e) => {
 								if(currentPage < quiz.length) setCurrentPage(prev => prev + 1);
 								else {
-									await handleQuizAttempted();
+									await handleQuizAttempted(e);
 									handleSubmit();
 								}
 							 }}>

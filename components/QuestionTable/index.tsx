@@ -1,12 +1,12 @@
 import styles from "./QuestionTable.module.css"
 
 interface TabelData {
-	columns: number
-	rows: number[][]
+	columns?: number
+	rows?: number[][]
 }
 
 interface Props {
-	tabel: TabelData
+	table?: TabelData
 	caption?: string
 }
 

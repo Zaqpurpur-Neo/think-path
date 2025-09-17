@@ -9,7 +9,7 @@ export default async function handler(
 	if(quiz === undefined) {
 		res.status(400).json({ content: "" })
 	} else {
-		const content = getQuiz(quiz); 
+		const content = getQuiz(quiz as string); 
 		res.status(200).json({ 
 			content: JSON.parse(content),
 		});

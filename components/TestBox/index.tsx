@@ -8,7 +8,9 @@ export default function TestBox({
 	isDone = false,
 	onClick = () => {}
 }: {
-	isUnlock: boolean
+	isUnlock: boolean,
+	isDone: boolean,
+	onClick: () => any | never | void
 }) {
 	const router = useRouter();
 

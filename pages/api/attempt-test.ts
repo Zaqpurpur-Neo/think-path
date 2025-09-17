@@ -20,7 +20,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
 			const tests = JSON.parse(getTest());
 			const test = tests.questions.filter(item => item.id === testId)[0];
-			console.log("LOG", testId, test, answer)
 
 			if (!test) return res.status(404).json({ error: "Test not found" });
 

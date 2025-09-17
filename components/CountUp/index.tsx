@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import { useInView, useMotionValue, useSpring } from 'motion/react';
 
 export default function CountUp({
-  to,
+  to = 0,
   from = 0,
   direction = 'up',
   delay = 0,
@@ -12,8 +12,8 @@ export default function CountUp({
   className = '',
   startWhen = true,
   separator = '',
-  onStart,
-  onEnd
+  onStart = () => {},
+  onEnd = () => {}
 }) {
   const ref = useRef(null);
   const motionValue = useMotionValue(direction === 'down' ? to : from);
@@ -83,7 +83,7 @@ export default function CountUp({
           maximumFractionDigits: hasDecimals ? maxDecimals : 0
         };
 
-        const formattedNumber = Intl.NumberFormat('en-US', options).format(latest);
+        const formattedNumber = Intl.NumberFormat('en-US', options).format(Number(latest));
 
         ref.current.textContent = separator ? formattedNumber.replace(/,/g, separator) : formattedNumber;
       }

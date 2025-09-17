@@ -8,7 +8,7 @@ function Progress({
   value,
   delay = 0,
   ...props
-}: React.ComponentProps<typeof ProgressPrimitive.Root>) {
+}: React.ComponentProps<typeof ProgressPrimitive.Root> & { delay?: number }) {
 	const [progress, setProgress] = useState(1);
 
 	useEffect(() => {

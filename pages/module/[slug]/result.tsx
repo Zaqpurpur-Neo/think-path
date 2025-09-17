@@ -316,15 +316,19 @@ function ItemComponent({
     const reader = resp.body.getReader();
     const decoder = new TextDecoder();
 
+	let arg = "";
     while (true) {
       const { done, value } = await reader.read();
       if (done) break;
       const chunk = decoder.decode(value);
+	  arg += chunk;
       setText((prev) => prev + chunk);
     }
 
+	const done = await marked.parse(arg);
+
     // Sudah rapi pakai marked.parse setelah selesai stream
-    setText((prev) => marked.parse(prev));
+    setText(done);
     setLoading(false);
   };
 

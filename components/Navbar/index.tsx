@@ -11,7 +11,7 @@ function objToArray(obj = {}) {
 	return array;
 }
 
-export default function Navbar({ pages, user, selectedPage, setSelectedPage, onLogout, normalRoute, isSlideOut = false}) {
+export default function Navbar({ pages, user, selectedPage, setSelectedPage = (...arg) => {}, onLogout = () => {}, normalRoute = "", isSlideOut = false}) {
 	const router = useRouter();
 	const pageser = objToArray(pages);
 

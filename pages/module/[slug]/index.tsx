@@ -36,7 +36,7 @@ export default function ContentPage() {
 
 	const router = useRouter()
 	const { slug } = router.query;
-	const postId = parseInt(slug?.slice(3, slug.length))
+	const postId = parseInt(slug?.slice(3, slug.length) as string)
 	const [content, setContent] = useState("");
 
 	const [doneReading, setDoneReading] = useState(false)
@@ -54,10 +54,10 @@ export default function ContentPage() {
 					userId: userCtx.user?.id,
 					postId: postId,
 				})
-				const data: Bab & { status: ProgressStatus } = await res.json();
-				const parsed: any = marked.parse(data.content);
+				const data: {content: string, status: ProgressStatus } = await res.json();
+				const parsed: any = marked.parse(data?.content);
 				setContent(parsed);
-				setRawText(markdownToText(data.content));
+				setRawText(markdownToText(data?.content));
 
 				if(data.status === "DONE_READING") {
 					setDoneReading(true)

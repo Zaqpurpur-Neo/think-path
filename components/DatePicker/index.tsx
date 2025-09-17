@@ -12,15 +12,15 @@ function DateOfMonth({ year, month, setCurrentDate }) {
 	const lastOfPrevMonth = new Date(year, month, 0);
 	const firstOfNextMonth = new Date(year, month + 1, 1);
 	
-	const prevDates: number[] = 
+	const prevDates: (number | string)[][] = 
 		Array
 			.from({ length: lastOfPrevMonth.getDay() })
 			.map((_, idx) => (["not-now", lastOfPrevMonth.getDate() - lastOfPrevMonth.getDay() + idx + 1]));
 
-	const dates: number[] = 
+	const dates: (number | string)[][] = 
 		Array.from({ length: lastOfMonth.getDate() }).map((_, idx) => (["now", idx + 1]));
 
-	const nextDates: number[] =
+	const nextDates: (number | string)[][] =
 		Array
 			.from({ length: 7 - firstOfNextMonth.getDay() + 1 })
 			.map((_, idx) => (["not-now", 
@@ -99,7 +99,7 @@ function DatePopup({ setFullDate }) {
 					</select>
 					<select 
 						onChange={(e) => {
-							setYearNow(e.currentTarget.value)
+							setYearNow(Number(e.currentTarget.value))
 						}}
 						value={yearNow}> 
 						{years.map((item, idx) => <option key={idx} value={item}>{item}</option>)}

@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>,
+  res: NextApiResponse<any>,
 ) {
 	res.writeHead(200, {
 		"Cache-Control": "no-cache, no-transform",
