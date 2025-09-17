@@ -37,7 +37,8 @@ Think Path adalah sebuah aplikasi berbasis Next.js yang dirancang untuk membantu
     ```
 4. **Jalankan aplikasi**
     ```bash
-    npm run dev
+    npm run build
+    npm start
     ```
 
 ## Mendapatkan API Key dari OpenRouter
