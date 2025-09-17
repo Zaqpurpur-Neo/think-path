@@ -21,13 +21,13 @@ export function UserProvider({ children }: { children: ReactNode }) {
 
 	const refreshUser = async () => {
 		const res = await authFetch("/api/auth/profile");
+		console.log(router)
 		if (res.ok) {
 			const data = await res.json();
 			setUser(data.user);
 			setLoading(false);
 		} else {
-			console.log("what happens")
-			if(res.status >= 400) {
+			if(res.status >= 400 && router.pathname !== "/") {
 				router.push("/login")
 			}
 		}
