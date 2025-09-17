@@ -33,8 +33,7 @@ Think Path adalah sebuah aplikasi berbasis Next.js yang dirancang untuk membantu
     ```
 3. **Setup database**
     ```bash
-    npx prisma migrate dev --name init
-    npx prisma generate
+    npm run db:migrate
     ```
 4. **Jalankan aplikasi**
     ```bash
