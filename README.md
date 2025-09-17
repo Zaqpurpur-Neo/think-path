@@ -1,40 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Think Path
 
-## Getting Started
+Think Path adalah sebuah aplikasi berbasis Next.js yang dirancang untuk membantu pengguna dalam pembelajaran interaktif, latihan soal, dan manajemen progres belajar. Proyek ini menggunakan berbagai komponen modular, database SQLite dengan Prisma ORM, serta menyediakan API untuk berbagai fitur seperti kuis, tes, dan leaderboard.
 
-First, run the development server:
+## Fitur Utama
+- **Dashboard**: Menampilkan progres belajar dan statistik pengguna.
+- **Kuis & Tes**: Latihan soal interaktif dan tes akhir.
+- **Manajemen Modul**: Konten pembelajaran per bab yang terstruktur.
+- **Leaderboard**: Papan peringkat untuk memotivasi pengguna.
+- **Autentikasi**: Sistem login dan registrasi pengguna.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Struktur Direktori
+- `components/` — Komponen UI modular (Button, DatePicker, ListTable, dsb)
+- `content/` — Konten pembelajaran dan soal per bab
+- `context/` — React context untuk manajemen state global
+- `database/` — Skema database Prisma dan file migrasi
+- `hooks/` — Custom React hooks
+- `lib/` — Library utilitas (auth, fetch markdown, dsb)
+- `pages/` — Halaman Next.js (dashboard, login, register, dsb)
+- `public/` — Aset publik (gambar, favicon)
+- `styles/` — File CSS modul dan global
+- `types/` — Tipe TypeScript global
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Instalasi
+1. **Clone repository**
+	```bash
+	git clone https://github.com/Zaqpurpur-Neo/think-path.git
+	cd think-path
+	```
+2. **Install dependencies**
+	```bash
+	npm install
+	```
+3. **Setup database**
+	```bash
+	npx prisma migrate dev --name init
+	npx prisma generate
+	```
+4. **Jalankan aplikasi**
+	```bash
+	npm run dev
+	```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Konfigurasi Lingkungan
+Buat file `.env` jika diperlukan untuk konfigurasi database atau variabel lingkungan lainnya.
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Kontribusi
+Pull request dan issue sangat terbuka untuk pengembangan lebih lanjut.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+## Lisensi
+MIT License
