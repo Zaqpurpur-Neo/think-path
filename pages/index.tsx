@@ -75,7 +75,7 @@ export default function LandingPage() {
 	},
     { 
 		number: "Coming Soon", 
-		label: "Akses Pembelajaran",
+		label: "Mini Game Berbasis Computational Thinking",
 		icon: Hourglass
 	}
   ]
