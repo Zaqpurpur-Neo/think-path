@@ -41,6 +41,31 @@ Think Path adalah sebuah aplikasi berbasis Next.js yang dirancang untuk membantu
     npm run dev
     ```
 
+## Mendapatkan API Key dari OpenRouter
+
+Untuk menggunakan layanan OpenRouter, Anda perlu memiliki API Key. Berikut langkah-langkahnya:
+
+1. **Daftar akun di OpenRouter**  
+   Buka [https://openrouter.ai/](https://openrouter.ai/) dan buat akun baru, atau login jika sudah memiliki akun.
+
+2. **Akses halaman API Keys**  
+   Setelah login, buka menu **Dashboard** → pilih **API Keys**.
+
+3. **Buat API Key baru**  
+   Klik tombol **Create Key**, lalu beri nama sesuai kebutuhan (misalnya: `ThinkPath Development`).
+
+4. **Salin API Key Anda**  
+   Salin API Key yang ditampilkan dan simpan di tempat aman.  
+   ⚠️ Catatan: API Key hanya ditampilkan sekali saat dibuat. Jika hilang, Anda perlu membuat yang baru.
+
+5. **Tempel ke file `.env`**  
+   Buka file `.env` Anda dan isi variabel berikut dengan API Key yang sudah didapatkan:
+
+   ```env
+   OPENROUTER_DEEPSEK_API_KEY=API_KEY_DARI_OPENROUTER
+6. **Selesai**
+   Sekarang aplikasi Anda bisa menggunakan layanan OpenRouter
+
 ## Konfigurasi Lingkungan
 
 1. Duplikat file `.env.example` menjadi `.env`
